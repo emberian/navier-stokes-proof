@@ -1,0 +1,90 @@
+======================================================================================================================
+LEMMA 19 GATE -- does production ride COHERENCE, and is the coherent fixed point the VETO point (e2), not e1?   (N=64, nu=0.006)
+======================================================================================================================
+  LEMMA 19 (classification): production-carrying organization at high intensity is tube-class.
+  Desk engine (exact): D_t omega = S omega (W omega = 0), so xi flows PROJECTIVELY under S ->
+  alignment with e1 at rate lam1-lam2 (production self-maximizing, the w'~w^2 caricature).  What
+  stops it: the eigenframe at intense points is SLAVED to the local omega-arrangement (self-strain
+  dominates, |S_far| <= C r^-3/2 ||omega||_2), and for a COHERENT arrangement the self-strain has
+  xi as an exact NULL eigenvector (the veto, Lemma 3 / sec 120).  So e1-alignment is
+  self-destroying: aligning parallelizes, parallelizing activates the veto, the veto demotes xi's
+  eigenvalue to gamma_far -- the middle of the (+c.omega, gamma_far, -c.omega) sandwich.  The only
+  self-consistent persistent alignment at high intensity is xi = e2 with alpha = gamma_far: the
+  TUBE CLASS.  Tangles cannot persist (they parallelize on their own production clock); e1-locked
+  runaway cannot persist (frame slaving).  This gate tests the mechanism per-flow.
+
+  INSTRUMENT: coherence C(x) = |G_ell * omega| / (G_ell * |omega|) in [0,1] -- local vorticity
+  polarization at core scale ell (1 = locally parallel, small = direction-tangled).  The
+  phase-randomized control has the SAME spectrum, so any C-difference and any C-production
+  correlation is pure phase organization.
+
+  REGISTERED, all outcomes named, controls first:
+    V-0a ** instrument validation: straight-tube forest (axis-aligned, random positions) must give
+         omega-weighted <C> > 0.95 on its support; the instrument sees parallel structure. **
+    V-0b ** evolved vs phase-randomized: in the top-|omega| decile the evolved C-distribution must
+         sit ABOVE the randomized one (worms more coherent than the Gaussian baseline with the
+         identical spectrum).  No separation => instrument void, gates do not proceed. **
+    G19-1 ** production rides coherence: binning the top decile by C, the per-unit-enstrophy
+         normalized production must be positive and increasing with C, and ~0 (|.| small) in the
+         low-C (tangle) bins.  REFUTED if a low-C bin carries O(1) production share at high rate:
+         a producing tangle. **
+    G19-2 ** the fixed point is the veto point: in the high-C intense bins, |xi.e2| dominates
+         (>= ~0.7) and alpha/lam1 stays at or below the known plateau ~0.5 in EVERY bin.
+         REFUTED if high-C bins are e1-dominated or alpha/lam1 -> 1 anywhere: the frozen-frame
+         attractor would be winning and production would run at the uncapped rate. **
+    G19-3 ** control: the phase-randomized field must show per-unit production ~0 in ALL C-bins
+         (no organization, no production -- Lemma 18a localized).  Dirty control => gates void. **
+
+code/l19_gate.py:67: RuntimeWarning: divide by zero encountered in power
+  U = [c * np.where((K > 0) & (K <= 3), K ** -1.0, 0.0) for c in U]
+  setup: N=64, nu=0.006, u_rms=1, IC = banked seed-5 band-limited field, Re ~ 1047
+  V-0a forest: omega^2-weighted <C> on support = 0.9892   (PASS (>0.95))
+
+
+  t = 2.0   max|w| = 14.898
+  [evolved t=2]  P_tot = +0.44939 (normalized)   top-decile share of P = 0.528   production-weighted <C> = 0.6679  vs  enstrophy-weighted <C> (hi) = 0.7781
+       C bin   pop %   ens %  P share  per-unit P    a/l1  |xi.e1|  |xi.e2|  |xi.e3|
+   0.00-0.50    8.54    8.08    0.078     0.53712   0.471   0.2948   0.8856   0.0934
+   0.50-0.70   18.02   18.16    0.146     0.44702   0.426   0.2926   0.8863   0.1130
+   0.70-0.85   28.94   29.49    0.169     0.31904   0.346   0.3027   0.8758   0.1415
+   0.85-0.95   34.83   35.54    0.126     0.19786   0.308   0.3765   0.8149   0.1930
+   0.95-1.00    9.68    8.72    0.009     0.05832   0.095   0.3580   0.7988   0.2754
+
+  t = 4.0   max|w| = 18.740
+  [evolved t=4]  P_tot = +0.39755 (normalized)   top-decile share of P = 0.533   production-weighted <C> = 0.5985  vs  enstrophy-weighted <C> (hi) = 0.7105
+       C bin   pop %   ens %  P share  per-unit P    a/l1  |xi.e1|  |xi.e2|  |xi.e3|
+   0.00-0.50   12.02   10.90    0.098     0.40764   0.412   0.3512   0.8547   0.1305
+   0.50-0.70   28.42   28.05    0.192     0.30973   0.338   0.3529   0.8369   0.1775
+   0.70-0.85   41.22   42.56    0.209     0.22269   0.256   0.3479   0.8159   0.2184
+   0.85-0.95   18.28   18.46    0.034     0.08220   0.099   0.2983   0.8262   0.2685
+   0.95-1.00    0.06    0.04   -0.000    -0.09801  -0.167   0.2253   0.8240   0.3765
+
+  t = 8.0   max|w| = 12.855
+  [evolved t=8]  P_tot = +0.41620 (normalized)   top-decile share of P = 0.505   production-weighted <C> = 0.5896  vs  enstrophy-weighted <C> (hi) = 0.7060
+       C bin   pop %   ens %  P share  per-unit P    a/l1  |xi.e1|  |xi.e2|  |xi.e3|
+   0.00-0.50   11.98   10.70    0.091     0.42458   0.464   0.4609   0.7616   0.1689
+   0.50-0.70   31.13   31.49    0.216     0.34264   0.379   0.4055   0.7926   0.1915
+   0.70-0.85   38.60   39.36    0.162     0.20527   0.279   0.3924   0.7769   0.2377
+   0.85-0.95   17.89   18.00    0.036     0.10006   0.166   0.3639   0.7796   0.2718
+   0.95-1.00    0.40    0.44    0.001     0.12926   0.327   0.4348   0.8165   0.1415
+
+  robustness ell = 4 dx (final time):
+  [evolved ell=4dx] per-unit P by C bin:   0.00-0.50: +0.2849   0.50-0.70: +0.1262   0.70-0.85: +0.0380   0.85-0.95: --   0.95-1.00: --
+
+  control: phase-randomized field (same spectrum as evolved t=8):
+  V-0b top-decile coherence:  evolved <C> = 0.7060 (median 0.7289)   randomized <C> = 0.7150 (median 0.7208)   (NO SEPARATION -- instrument void)
+  [randomized]  P_tot = +0.02175 (normalized)   top-decile share of P = 0.577   production-weighted <C> = 0.6140  vs  enstrophy-weighted <C> (hi) = 0.7150
+       C bin   pop %   ens %  P share  per-unit P    a/l1  |xi.e1|  |xi.e2|  |xi.e3|
+   0.00-0.50    4.50    3.90    0.077     0.07543   0.104   0.5192   0.5302   0.4433
+   0.50-0.70   37.88   35.47    0.306     0.03281   0.044   0.5015   0.5244   0.4702
+   0.70-0.85   51.97   53.31   -0.007    -0.00051   0.006   0.4915   0.5211   0.4871
+   0.85-0.95    5.64    7.32    0.201     0.10444   0.133   0.5698   0.5006   0.4388
+   0.95-1.00    0.00   (empty)
+
+  READ-OFF:
+    G19-1: per-unit P positive & rising with C in evolved bins; ~0 in low-C bins => production
+           rides coherence.  A low-C bin with large P share at high rate would REFUTE.
+    G19-2: high-C bins e2-dominant with a/l1 <= ~0.5 everywhere => the veto fixed point, capped.
+           e1-dominance or a/l1 -> 1 would REFUTE (frozen-frame runaway).
+    G19-3: randomized per-unit P ~ 0 in all bins => the correlation is organization, not artifact.
+  total 447s

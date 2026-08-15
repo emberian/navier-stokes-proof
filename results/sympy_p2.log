@@ -1,0 +1,6 @@
+(1) OK: c*(G/nu)^(-1/3) is decreasing in G, equals the floor at G = Gmax:
+        c2 >= c*(nu/Gamma_max)^(1/3) for all class tubes — the fast clock survives
+(2) OK: middle eigenvalue of (sigma, 0, -sigma) is 0 exactly — FT-2's veto reading
+(3) OK: exp(3*a_max*T) with T = 2log(1/lambda_0) fixed — a pure class constant
+
+Pass-2 chains ADJUDICATED. Lean targets: ec_rate_floor, ft_middle_eigenvalue

@@ -1,0 +1,15 @@
+RULER REVIEW (Jeff's directive) -- correct truncated references, contamination-resistant
+  DESK (exact, computed fresh): a TRUE Gaussian profile measured under our masks gives
+    F4(omega^2-weight, 0.5-mask)   = 0.1085/0.269^2      = 1.499   (NOT 2.0 -- the 2.0
+        reference in sec-178's P-3 was the UNtruncated value: reasoning error, corrected)
+    moment-ratio <r2>(0.5)/<r2>(0.25) (omega^2 weights)  = 0.269/0.407 = 0.661
+  REGISTERED: V-1 both worm statistics within 12% of the truncated-Gaussian references ->
+  Gaussian verified WITH THE RIGHT REFERENCES (calibration stands, R = 1.85 stands).  Else:
+  fit generalized-Gaussian exp(-(r2/d2)^p), recompute the calibration factor for fitted p,
+  restate R.  V-2 strain-split self-consistency: alpha from BS(full omega) = alpha from U
+  directly, to < 1% (the split ruler exact).
+  V-1 worm: F4(w2,.5) = 4.037 (Gauss-trunc ref 1.499)   ratio = 0.222 (ref 0.661)
+  V-1: DEVIATES -- generalized-Gaussian refit below
+  refit: p = 0.50 (Gaussian p=1) reproduces ratio 0.327; calibration factor at 0.5-mask = 0.194 (Gaussian 0.269)
+  restated: delta^2 = 0.1017 -> R = 2.75 (was 1.85 under Gaussian)
+  V-2 alpha direct = 0.6652  via BS(full omega) = 0.6652  diff = 0.00%   (PASS -- split ruler exact)

@@ -1,0 +1,8 @@
+sympy pre-Lean verification -- the financing identity's pointwise algebra (signs exact)
+  L1: tr(A^3) - [tr(S^3) + 3 tr(S W^2)]      = 0
+  L2: tr(S W^2) - (1/4) om.S.om              = 0
+  L2b: tr(S W^2) + (1/4) om.S.om             = s11*w1**2/2 - s11*w3**2/2 + s12*w1*w2 + s13*w1*w3 + s22*w2**2/2 - s22*w3**2/2 + s23*w2*w3
+  L3: tr(S^3) - 3 det(S)   (trace-free S)    = 0
+  chain: 0 = int tr(A^3) = int tr S^3 + 3 int tr(SW^2)
+  with the CORRECT L2 sign above  =>  int om.S.om = -(4/3) int tr S^3 = -4 int det S
+  (the recorded sec-119 statement: int om.S.om = -4 int l1 l2 l3 -- sign adjudicated)

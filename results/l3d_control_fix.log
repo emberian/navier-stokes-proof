@@ -1,0 +1,18 @@
+====================================================================================================
+T3-1' CONTROL FIX -- registered: same-N scan, interpolated r_c value, fixed-reference norm
+  The dirty 2D control had three artifacts: N changed mid-scan (800->1600), nearest-point
+  sampling, max-normalization (the max migrates with Re).  Fix: N=1600 throughout, linear
+  interpolation at r_c, normalize by |u_r(2.5)| (fixed reference radius away from the layer).
+  REGISTERED: F-1 2D alpha in [-0.08, +0.08] (constant -- clean control);
+              F-2 3D alpha stays in [0.08, 0.25] under the identical improvements.
+  3D Re=8000: |u_r(r_c)|/|u_r(2.5)| = 0.7963
+  3D Re=32000: |u_r(r_c)|/|u_r(2.5)| = 0.5959
+  3D Re=128000: |u_r(r_c)|/|u_r(2.5)| = 0.5182
+  3D Re=512000: |u_r(r_c)|/|u_r(2.5)| = 0.3708
+  3D fitted alpha = +0.175   band (0.08, 0.25): PASS
+  2D Re=8000: |u_r(r_c)|/|u_r(2.5)| = 3.5683
+  2D Re=32000: |u_r(r_c)|/|u_r(2.5)| = 1.5914
+  2D Re=128000: |u_r(r_c)|/|u_r(2.5)| = 0.6095
+  2D Re=512000: |u_r(r_c)|/|u_r(2.5)| = 0.4193
+  2D fitted alpha = +0.533   band (-0.08, 0.08): FAIL/inspect
+  total 98s

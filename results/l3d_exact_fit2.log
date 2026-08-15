@@ -1,0 +1,15 @@
+T3 EXACTNESS FIT 2 -- corrected parameter-free frequency: TWO-BRANCH INTERFERENCE
+  The layer value is |C zeta^{+i mu} + D zeta^{-i mu}| at the nu^{1/3} cutoff: the modulus
+  beats at 2mu/3 in ln nu (the cross term), not mu/3.  s=0.5: predicted period 4.78 vs the one
+  observed pairwise-slope cycle over span 4.85.  Fit with the frequency LOCKED at 2mu/3.
+  REGISTERED: XF-1 alpha in [0.150, 0.185] BOTH s; XF-2 rms improves on pure power fit.
+  s=0.5: pure alpha=0.1814 (rms 0.0524)   2mu/3-LOCKED: alpha=0.2026, A=0.093, phi=+0.94 (rms 0.0032)   XF-1 OUTSIDE  XF-2 PASS
+  s=0.7: pure alpha=0.2069 (rms 0.0255)   2mu/3-LOCKED: alpha=0.2102, A=0.027, phi=-0.73 (rms 0.0183)   XF-1 OUTSIDE  XF-2 PASS
+  universality: alphas = ['0.2026', '0.2102'], spread 0.0076 (target <= 0.02)   [1/6 = 0.1667]
+
+LOCKED-EXACT TEST: alpha LOCKED at 1/6 + fitted O(nu^{1/3}) connection correction
+  REGISTERED: XF-3 if rms(1/6-locked + b nu^{1/3}) <= rms(free alpha), the data is fully
+  consistent with the EXACT 1/6 law with a first-order correction of the predicted class --
+  the exactness statement at finite Re.  If much worse: real anomaly beyond the class.
+  s=0.5: free-alpha rms = 0.0032 (alpha 0.2026)   1/6-LOCKED+corr rms = 0.0028 (b = 2.14, A = 0.088)   XF-3 PASS -- consistent with EXACT 1/6
+  s=0.7: free-alpha rms = 0.0183 (alpha 0.2102)   1/6-LOCKED+corr rms = 0.0089 (b = 2.78, A = 0.028)   XF-3 PASS -- consistent with EXACT 1/6

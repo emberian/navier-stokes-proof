@@ -1,0 +1,34 @@
+==================================================================================================================
+WORM GATE 4 -- EXACTNESS REDO ITEM 1: the Burgers LAW in budget form on the TRACKED worm (N=128, snapshots [0.0, 0.1, 0.2, 0.3, 0.4])
+==================================================================================================================
+  The exact form of W-2 is the law itself, all terms measured, one exact prediction:
+      E := (d(delta^2)/dt + alpha * delta^2) / (4 nu) = 1
+  -- valid on AND off equilibrium (what J(C1)'s modulation system consumes).  Identity is
+  POSITION-LOCKED: start from the sec-175 worm's coordinates, advect the tracking point with
+  the local velocity between snapshots, identify by local max in a +-6 cell ball.  delta^2 via
+  the N=128-calibrated estimator (gate 3: est = 0.269 d2 + 0.00055, curve residuals <= 5.3%).
+
+  REGISTERED, outcomes named:
+    Z-0 ** tracking lock: peak within 5 cells of the advected guess each window AND peak value
+        continuous (+-20%) -- the SAME worm, certified.  Else identity lost -> void. **
+    Z-1 ** context: calibrated equilibrium ratio R = delta^2 alpha/(4nu) per snapshot. **
+    Z-2 ** THE EXACT TEST: per-interval budget E = (Ddelta^2/Dt + abar*d2bar)/(4nu); median
+        over intervals in [0.65, 1.35].  PASS = the Burgers law measured exactly on a tracked
+        real worm.  Named alternative: E ~ 1 with R stably > 1.35 = the worm OBEYS the law
+        while off-equilibrium (fat core, contracting) -- recorded as the exact result (the law,
+        not the fixed point, is what the theorem uses). **
+
+  t' = 0.00: worm (np.int64(80), np.int64(93), np.int64(104)) (drift 1.0 cells)  |w|_pk = 13.14  d2 = 0.0734  alpha = 0.648  Z-1 R = 1.98
+  t' = 0.10: worm (np.int64(81), np.int64(93), np.int64(105)) (drift 1.7 cells)  |w|_pk = 12.82  d2 = 0.0723  alpha = 0.615  Z-1 R = 1.85
+  t' = 0.20: worm (np.int64(82), np.int64(93), np.int64(105)) (drift 1.7 cells)  |w|_pk = 12.39  d2 = 0.0799  alpha = 0.565  Z-1 R = 1.88
+  t' = 0.30: worm (np.int64(82), np.int64(94), np.int64(104)) (drift 0.0 cells)  |w|_pk = 11.98  d2 = 0.0802  alpha = 0.507  Z-1 R = 1.69
+  t' = 0.40: worm (np.int64(83), np.int64(94), np.int64(105)) (drift 2.4 cells)  |w|_pk = 11.53  d2 = 0.0874  alpha = 0.479  Z-1 R = 1.74
+
+  Z-0 tracking: drifts OK = True, peak continuity OK = True   (PASS -- same worm)
+  interval 0.00-0.10: d(d2)/dt = -0.0114   alpha*d2 = 0.0460   E = 1.44
+  interval 0.10-0.20: d(d2)/dt = +0.0763   alpha*d2 = 0.0449   E = 5.05
+  interval 0.20-0.30: d(d2)/dt = +0.0025   alpha*d2 = 0.0429   E = 1.89
+  interval 0.30-0.40: d(d2)/dt = +0.0725   alpha*d2 = 0.0413   E = 4.74
+
+  Z-2 THE EXACT TEST: median budget E = 3.32   (OUTSIDE -- report honestly)
+  total 1059s

@@ -1,0 +1,6 @@
+sympy layer -- ruler mathematics: the calibration factor's closed form + the moment law
+  calibration factor = 1/2 - log(2)/3 = 1/2 - log(2)/3
+  closed form 1/2 - ln2/3: difference = 0   value = 0.268951
+  Gaussian family under the strained flow:  d(d2)/dt = -alpha*d2(t) + 4*nu
+  (the moment law predicts d(d2)/dt = 4 nu - alpha d2;  m2 = d2 for the Gaussian)
+  match: True

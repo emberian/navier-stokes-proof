@@ -1,0 +1,3 @@
+W2/W3 verification
+  W2 integral: 2*pi*r**2   (claim 2 pi r^2: match = True)
+  W3 Gronwall solution check: residual = Piecewise((0, Ne(d, k)), (F*t*(d - k), True))

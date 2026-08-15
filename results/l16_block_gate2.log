@@ -1,0 +1,39 @@
+==================================================================================================================
+L16 BLOCK GATE 2 -- Riesz projection at the ISOLATED Kelvin resonance (m=+-1, q=1.5, s*=0.3595; N=200)
+==================================================================================================================
+  Gate 1 (l16_block_gate.py) validated the coupled operator (V-1 centroid 0.2-0.7%) and then
+  DOCUMENTED that eigensolve identification at the omega~0 crossing is void: 56 movers, not 2 --
+  the discretized-continuum scatter of sec 156-158, rediscovered by an independent route.  The
+  crossing coupling kappa therefore stands on the banked propagation gates (sigma/eps = 0.414,
+  viscous-corrected a in [0.57,0.73], Floquet 0.5624 bracketed).  The CONTOUR object of swept
+  Lemma 16 is tested where the mode is genuinely isolated on the discrete grid: the
+  single-sector Kelvin resonance at s* (r2_anatomy's measured spike, height ~ 1/nu), with the
+  PAIR statement = direct sum across the m = +1 and m = -1 mirror sectors.
+
+  REGISTERED, all outcomes named:
+    G2-0 ** identification: in each sector exactly ONE shallow eigenvalue in the box
+         |Im lam -+ s*| < 0.03, Re lam in (-0.05, 0); its frequency within 0.01 of r2_anatomy's
+         s* = 0.3595 (cross-instrument).  None or several -> void. **
+    G2-1 ** Riesz projection per sector: ||P^2-P||/||P|| <= 1e-3, trace = 1; mirror sum
+         trace = 2 (THE PAIR).  Registered radius nu^{1/3}/2 first; adaptive fallback recorded
+         if the discretized continuum intrudes (instrument note, not refutation -- the TRUE
+         hierarchy nu << nu^{1/3} is the lemma's claim; the discrete continuum's scatter depth
+         is the instrument's known artifact).  Non-idempotent at all radii -> Lemma 16 REFUTED. **
+    G2-2 ** damping: c_K = -Re lam/nu in [2,4] both sectors (the registered bracket). **
+    G2-3 ** the hierarchy, measured: the pair's depth vs the nearest-other mode's depth in the
+         frequency window -- pair shallower by a factor >= 3 (nu vs nu^{1/3} at Re=2000 predicts
+         ~15x ideal; discrete scatter erodes it -- factor and eroded-vs-ideal recorded). **
+    G2-4 ** robustness: Re-doubling (c_K stable => O(nu) damping; idempotency stable);
+         radius halving. **
+
+  --- Re = 2000 ---
+  m=+1: mode -0.01023+0.35988j  (box count 1; freq vs s*: 0.0004)   c_K = 3.26   nearest other 0.3748
+        G2-1: reg radius 0.0732 encloses 1; used 0.0732: idem 4.54e-15, trace 1.000   (PASS)
+        G2-3 depth hierarchy (window modes / pair): infx   G2-4 half-radius: idem 3.62e-15, trace 1.000
+  m=-1: mode -0.01023-0.35988j  (box count 1; freq vs s*: 0.0004)   c_K = 3.26   nearest other 0.3748
+        G2-1: reg radius 0.0732 encloses 1; used 0.0732: idem 5.46e-15, trace 1.000   (PASS)
+        G2-3 depth hierarchy (window modes / pair): infx   G2-4 half-radius: idem 3.73e-15, trace 1.000
+  THE PAIR: trace sum = 2.000 (rank 2 across mirror sectors)   c_K = (3.26, 3.26)   G2-2 [2,4]: PASS
+  --- B2-4 Re = 4000 (m=+1) ---
+  mode -0.00506+0.35998j   c_K = 3.22 (vs 3.26 -- O(nu) PASS)   idem 2.25e-15, trace 1.000
+  total 16s

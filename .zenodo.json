@@ -1,0 +1,10 @@
+{
+  "title": "Verification companion: Global Regularity for the Three-Dimensional Incompressible Navier-Stokes Equations on the Torus",
+  "creators": [{"name": "Cambria, Jeffrey S.", "orcid": "0009-0008-4226-2099"}],
+  "license": "CC-BY-4.0",
+  "upload_type": "software",
+  "related_identifiers": [
+    {"relation": "isSupplementTo", "identifier": "10.5281/zenodo.21959161", "resource_type": "publication-preprint"}
+  ],
+  "description": "Verification companion to the paper: Lean 4 + Mathlib machine certificates (54 kernel-checked theorems, zero unproven placeholders, pinned unmodified Mathlib), the symbolic-adjudication scripts with their logs, the calibrated numerical instruments with archived outputs, and the paper source with SHA-256 manifests and OpenTimestamps receipts."
+}

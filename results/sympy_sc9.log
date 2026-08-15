@@ -1,0 +1,5 @@
+(1) OK: int_0^1 x^m dx = 1/(m+1) — SU's Green kernel integral
+(2) OK: Oseen Omega = 1 - r^2/2 + r^4/6 - ...; Omega(0) = 1, Omega''(0) = -1 exact
+(3) OK: r_c^(2m)/r_c = (2(1-c))^(m-1/2); exponent m-1/2 >= 1/2 > 0 for all m >= 1
+
+SC-9 chains ADJUDICATED. Lean targets: su_green_integral, qd_exponent_positive, qd_rpow_collapse

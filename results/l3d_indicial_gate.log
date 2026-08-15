@@ -1,0 +1,34 @@
+================================================================================================================
+TRANCHE-3 INDICIAL-EXPONENT GATE -- does the 3D solution VANISH at the layer like |zeta|^(1/2)?  (m=1, s=0.5)
+================================================================================================================
+  Swept 3D-Lemma 9: exponents nu+- = 1/2 +- (1/2)sqrt(1-4J), J = 2 Om W q^2/(m Om')^2 -- for
+  every J > 0 the layer solutions VANISH like |zeta|^{1/2}(+-i mu osc).  2D (q=0) instead has
+  the non-vanishing log/pole structure.  This is the swept lemmas' one never-directly-measured
+  prediction, and it discriminates the whole swirl-layer theory from 2D in one number.
+
+  REGISTERED, outcomes named:
+    T3-1 ** 3D (q=1.5): fitted local exponent of |u_r| vs |r-r_c| on the outer window
+         [2 nu^{1/3}, 0.4] lands in [0.3, 0.7] (oscillation-tolerant band around 1/2), at BOTH
+         Re = 32000 and 128000 (Re-stable).  Exponent ~ 0 or negative -> swirl square-root law
+         REFUTED (3D-Lemma 9's core wrong). **
+    T3-2 ** 2D control (q=0), same probe: exponent in [-0.2, +0.2] (non-vanishing) -- the
+         discriminator.  If 2D also shows +0.5 the instrument is measuring an artifact. **
+
+  Re=32000: r_c=1.256   3D (q=1.5) exponents ['-0.034', '0.201'] mean +0.084   2D (q=0) ['-0.078', '0.241'] mean +0.082
+  Re=128000: r_c=1.256   3D (q=1.5) exponents ['0.064', '0.239'] mean +0.151   2D (q=0) ['0.087', '0.119'] mean +0.103
+
+  T3-1 3D exponent in [0.3, 0.7], Re-stable: FAIL/inspect
+  T3-2 2D control in [-0.2, 0.2]: PASS -- discriminator clean
+  total 7s
+
+  T3-1' layer-point scaling |u_r(r_c)|/max vs nu:
+    3D Re=8000: 0.1006
+    3D Re=32000: 0.0770
+    3D Re=128000: 0.0713
+    3D Re=512000: 0.0577
+    3D fitted alpha = +0.126  target (0.08, 0.25): PASS
+    2D Re=8000: 0.2906
+    2D Re=32000: 0.1254
+    2D Re=128000: 0.0427
+    2D Re=512000: 0.0815
+    2D fitted alpha = +0.353  target (-0.05, 0.06): FAIL/inspect

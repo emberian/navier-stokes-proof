@@ -1,0 +1,6 @@
+(1) OK: e(t) = e_eq + (e0 - e_eq)exp(-at), e_eq = b/a — the circularization law
+(2) OK: at omega = 2*M*C_e*gamma the equilibrium is exactly 1/(2M) — inside e <= 1/M
+(3) OK: max(w-r,0) + min(w,r) = w — the BKM split, both branches (w = r±s) + grid
+(4) OK: calibration C_e = 0.9*19.6 = 17.64 (moderate-ratio point, l17 gates)
+
+SC-4 chain ADJUDICATED. Lean targets: ec_threshold, ec_bkm_split

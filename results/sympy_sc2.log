@@ -1,0 +1,10 @@
+(1) OK: shifted 2D field — div u = 0, S_33 = 0 EXACTLY; off-axis strain and
+        transverse vorticity are first-order in h' (vanish when h' = 0) — as claimed
+(2) OK: xi^T S xi = 2 sc(S13 cp + S23 sp) + s^2(...) — NO cos^2(theta) term;
+        matches the displayed expansion exactly (Lean: cp_axial_residue)
+(3) OK: payment = C^2 g^2 d^2/G; = C^2 gamma at d^2 = G/gamma; band sum =
+        4*C**2*C_v*Gamma_max*Omega*nu/(Gamma_min**3*L*c1*c_E) — GAMMA-FREE: C_n nu Omega form confirmed
+(4) OK: sum 4^{-k} = 4/3 — identical series, w9_shell_series certificate carries over
+
+SC-2 chain ADJUDICATED. Lean targets: cp_veto_shifted_field (matrix form),
+cp_axial_residue, cp_payment_algebra

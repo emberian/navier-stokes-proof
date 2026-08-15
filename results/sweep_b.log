@@ -1,0 +1,6 @@
+SWEEP B -- the number trace: every headline figure in NS_Proof.md walked to its log line
+  verdicts: FOUND (string present in the canonical log) / MISSING (flag, triage)
+  MISSING | 0.0366                                     | l16_block_gate3.log        | detuning Delta
+  MISSING | 0.680                                      | l16_block_gate3.log        | effective (sigma+d)/eps in banked bracket
+
+  SWEEP B: 35/37 traced to canonical logs; 2 flagged

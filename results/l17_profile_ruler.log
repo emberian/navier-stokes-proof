@@ -1,0 +1,18 @@
+PROFILE-FREE RULER -- the omega-weighted moment law is EXACT for ANY profile
+  DESK (exact, any axisymmetric profile, uniform axial strain): d(m2)/dt = 4nu - alpha*m2
+  with m2 = omega-WEIGHTED transverse second moment; equilibrium m2 = 4nu/alpha, profile-free.
+  The previous ruler's omega^2 weighting was the profile-dependent step.  REGISTERED:
+    P-1 ** m2 vs mask threshold {0.5, 0.25, 0.125}x peak converges (extrapolation spread
+        <= 15%) -- truncation removed. **
+    P-2 ** R_m = m2_extrap * alpha_w / (4nu): EXACT-STANDARD |R_m - 1| <= 0.35 -- W-2 exact,
+        profile-free.  Else: the core is genuinely off-equilibrium; the dynamic m2-budget is
+        the registered follow-on. **
+    P-3 ** the profile question answered directly: flatness F4 = <r^4>/<r^2>^2 (omega-weighted,
+        Gaussian = 2.0) -- reported with the verdict. **
+  omega-weighted core alpha = 0.663
+  mask   0.5: m2 = 0.0276   cells = 675
+  mask  0.25: m2 = 0.1356   cells = 4614
+  mask 0.125: m2 = 0.1835   cells = 10885
+  P-1: m2 extrapolated to zero threshold = 0.2375 (last-point gap 22.7%)   (not converged -- report)
+  P-2: R_m = 6.56   (off-equilibrium/inspect -- dynamic m2-budget is the follow-on)
+  P-3: flatness F4 = 1.87 (Gaussian = 2.0)   verdict: consistent with Gaussian

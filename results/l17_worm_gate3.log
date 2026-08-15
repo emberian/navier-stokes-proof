@@ -1,0 +1,27 @@
+==================================================================================================================
+WORM GATE 3 -- EXACTNESS AT RESOLUTION: spectral upsample to N=128, settle 0.5, calibrated Burgers ratio + fixed centreline tracer
+==================================================================================================================
+  Gate 2's calibration control PROVED the N=64 estimator is mask-quantization-dominated
+  (curve residuals to 27% at 2-3 cells/core) -- no calibration factor fixes quantization.
+  Exactness path: zero-pad the t=8 field to N=128 (spectrally EXACT), settle 0.5 time units
+  (~1 strain time, fine scales regenerate), re-calibrate the identical estimator on the finer
+  grid, re-measure.  Tracer bug fixed (2-cell march, min-image segments, degenerates skipped).
+
+  REGISTERED, outcomes named:
+    Y-0 ** calibration curve at N=128 SMOOTH: grid-model residuals <= 10% across delta_s^2 =
+        0.02/0.035/0.05 (quantization beaten).  Else resolution still insufficient -- report. **
+    Y-1 ** calibrated Burgers ratio R = delta^2_true*alpha/(4nu): EXACT-STANDARD PASS
+        |R - 1| <= 0.35.  R > 1.35: physical finding (core fatter than Burgers) -- then the
+        settling-time control decides: if R DROPS from the unsettled value, the excess was
+        upsample transient; report the settled number as the measurement. **
+    Y-2 ** kappa*delta from the fixed tracer: <= 0.3 (H1-class compatible). **
+
+  Y-0 calibration at N=128:
+    delta_s^2 = 0.02: est = 0.00599   F = 0.299
+    delta_s^2 = 0.035: est = 0.01052   F = 0.301
+    delta_s^2 = 0.05: est = 0.01339   F = 0.268
+    grid model est = 0.269*d2 + 0.00055: residuals ['0.9%', '5.3%', '4.5%']   (PASS -- quantization beaten)
+  settled to t = 8 + 0.5 at N=128 (1318s)
+  Y-1: raw = 0.04891   delta^2_true = 0.1798   alpha = 0.714   delta_B^2 = 0.0336   R = 5.35   (physical: fatter than Burgers)
+  Y-2: centreline points = 13, median kappa = 0.788, kappa*delta = 0.334   (strongly bent)
+  total 1320s

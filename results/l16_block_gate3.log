@@ -1,0 +1,35 @@
+==================================================================================================================
+L17 BLOCK GATE 3 -- SECOND TRY AT THE CROSSING: the GROWER identifies the pair; slope differencing gives kappa  (N=200, q=2.26, Re=2000)
+==================================================================================================================
+  Gate 1's movers heuristic drowned in continuum scatter.  The sharper discriminator, not
+  tried before: THE ELLIPTIC INSTABILITY ITSELF.  At the measured-stable config the eps=0
+  spectrum has a clean floor (S5-2's zero-floor result); at eps > 0 the destabilized pair
+  member is the UNIQUE Re lam > 0 eigenvalue -- identification with no heuristic.  The slope
+  d(Re lam_max)/d(eps) cancels the eps-independent damping (S5-2's differencing logic,
+  eigensolve-side) and must equal the INVISCID coupling constant directly.
+
+  REGISTERED, controls first, outcomes named:
+    G3-0 ** eps=0 floor: max Re lam <= 1e-3 (clean).  Dirty floor -> this route void (the
+         scatter owns the config after all) -- tranche 2 then stands on gate 2 + banked kappa. **
+    G3-1 ** at eps=0.04: EXACTLY ONE mode with Re lam > 1e-3 (the elliptic grower).  If none at
+         q=2.26, scan q=2.1, 2.4 (band tolerance).  Several -> scatter intrusion, report. **
+    G3-2 ** kappa = (Relam_max(0.04) - Relam_max(0.02))/0.02 in [0.57, 0.73]; linearity via the
+         eps=0.01 point (slope 0.01->0.02 within ~20% of slope 0.02->0.04).  Outside bracket ->
+         Lemma 17's normal form REFUTED at the crossing. **
+    G3-3 ** the grower is core-localized: velocity-norm^2 fraction in r < 3 at least 0.5 (a
+         Kelvin-core structure, not edge junk). **
+
+  eps= 0.00: max Re lam = -0.01893 (at -0.01893-0.01480j)   growers = 0
+    G3-0 floor: PASS (clean)
+  eps= 0.01: max Re lam = -0.01873 (at -0.01873-0.03696j)   growers = 0
+  eps= 0.02: max Re lam = -0.01050 (at -0.01050-0.00000j)   growers = 0
+  eps= 0.04: max Re lam = +0.01655 (at 0.01655-0.00000j)   growers = 1
+    G3-1: PASS -- exactly one grower
+  eps= 0.06: max Re lam = +0.04576 (at 0.04576-0.00000j)   growers = 2
+  eps= 0.08: max Re lam = +0.07309 (at 0.07309-0.00000j)   growers = 2
+  G3-2 real-branch points: (0.02,-0.01050)  (0.04,+0.01655)  (0.06,+0.04576)  (0.08,+0.07309)
+  G3-2 2x2-knee fit: kappa = 1.1347   d = 0.01063 (c = d/nu = 3.38)   Delta = 0.03656   rms resid = 6.28e-04
+  G3-2 asymptotic slope (0.06->0.08): 1.3662 (approaches kappa from above)   bracket [0.57,0.73] on fitted kappa: OUTSIDE -- record honestly
+  G3-3 grower core-localization (r<3 velocity fraction): 1.000   (PASS)
+  grower at eps=0.04: 0.01655-0.00000j   (S5-2 propagation predicted Re lam ~ 0.414*0.04 = +0.0166 raw)
+  total 240s

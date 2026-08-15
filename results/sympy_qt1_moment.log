@@ -1,0 +1,6 @@
+sympy layer -- QT-1 scaling algebra and moment-law by-parts, on exact decaying families
+  QT-1 by-parts (int y.grad f = -3 int f), family r^n e^(-r^2/d), n=0,2,4: [True, True, True]
+  QT-1 coefficient: 1/2*e + 1/4*(-3*e) = -e/4  (= -e/4, the -1/4 of QT-1)
+  moment by-parts (a): int r^4 w' = -4 int r^3 w : True
+  moment by-parts (b): int r^3 (w'' + w'/r) = 4 int r w : True
+  assembly: (-2*a + a)*m2 + 4*nu = -a*m2 + 4*nu  (= 4nu - a m2, the law)

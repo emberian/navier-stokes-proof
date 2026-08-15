@@ -1,0 +1,10 @@
+DIRECT PROFILE CUT -- the profile itself, sampled along perpendicular rays (no masks)
+  REGISTERED: C-1 fit omega(r) = pk*exp(-(r^2/d2)^p) to the ray profile down to 0.3*peak:
+  p in [0.85, 1.15] -> Gaussian verified DIRECTLY (calibration stands, R = 1.85 final);
+  else the fitted-p calibration factor restates R (computed and reported).
+  ray1:   2.4    2.6    2.9    2.7    1.3    3.6    8.4   12.0   13.1   10.7    7.5    4.6    3.1    2.4    1.8    1.6    1.4
+  ray2:   3.2    4.4    5.5    6.6    7.7    9.5   11.5   12.5   13.1   11.6   10.0    7.8    6.0    4.6    3.6    3.1    2.7
+  ray1 fit: d2 = 0.0210  p = 0.87
+  ray2 fit: d2 = 0.0767  p = 0.73
+  C-1: mean p = 0.80  mean d2(direct) = 0.0489   (non-Gaussian p)
+  R from the DIRECT d2 (no mask, no calibration needed): R = 1.32

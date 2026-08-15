@@ -1,0 +1,9 @@
+STRAIN SPLIT -- does the Burgers law close EXACTLY with the AMBIENT-strain ruler?
+  The tracked worm: R = alpha_total*delta^2/(4nu) = 1.85 stable.  Lemmas 3/5 predict the
+  contraction is driven by the AMBIENT strain only (self-strain of the bent worm does not
+  contract the core).  Parameter-free: alpha_amb should = 4nu/delta^2 = 0.327 (alpha_total
+  0.648).  REGISTERED: SS-1 R_amb = alpha_amb*delta^2/(4nu) in [0.65, 1.35] -> the law closes
+  exactly with the correct ruler; the excess is the measured self-term.  FAIL -> fat core is
+  physical, recorded.
+  alpha_total = 0.648   alpha_self = 0.074   alpha_ambient = 0.574   (predicted ambient for exact closure: 0.327)
+  SS-1: R_amb = 1.76   (FAIL -- fat core physical, recorded)

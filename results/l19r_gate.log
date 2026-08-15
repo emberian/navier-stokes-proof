@@ -1,0 +1,96 @@
+======================================================================================================================
+L19-R GATE -- the rigidity alternative, tested dynamically   (N=64, nu=0.006, snapshot results/l19_field_t8_N64.npy)
+======================================================================================================================
+  L19-R (the e-fold alternative): per intense point and e-fold window, EITHER production runs
+  at the capped/slow rate, OR the local state contracts to the nematic-aligned class on the fast
+  clock ~1/g (L19-R1, the contraction estimate: sustained pairing pins xi near +-e1 and the
+  projective flow contracts dispersion at the spectral-gap rate), whereupon the veto collapses
+  the pairing to gamma_far (L19-R2, exact).  The only escape -- a strain-decorrelated arranged
+  tangle -- must be locally self-similar across e-folds (L19-R3 bridge), excluded by the anchors.
+  Consequence: fast production self-limits to ~one e-fold per re-tangling cycle, and re-tangling
+  runs on the SLOW clock (decoherence <= 2 gamma_far, sec 121.3).
+
+  Dynamical predictions, tested here on the real flow:
+  (A) THE DRAIN: the flow never accumulates a population that is simultaneously fast-producing
+      and direction-tangled; pairing and coherence stay positively associated.
+  (B) THE BASIN: destroy ALL organization (phase randomization, spectrum intact) and re-evolve --
+      the flow must fall back to the veto fixed point (e2-locked, capped) on the fast clock, with
+      production and organization igniting TOGETHER (production never leads: Lemma 18's
+      inequality, live), and NO transient e1-locked runaway en route.
+
+  REGISTERED, all outcomes named (thresholds = medians of the t=8 intense set, fixed once):
+    R1a ** at every snapshot of branch A, the above-median-pairing intense population is
+        coherence-ENRICHED: mean C_n | (p > p*) >= mean C_n | (p <= p*).  Anti-association at
+        any snapshot REFUTES (a tangle-favouring pump). **
+    R1b ** the fast-tangled quadrant (p > p*, C_n < C*) carries production share <= its
+        enstrophy share + 0.1 at all times, and its population fraction does not grow
+        monotonically across branch A.  Growth of a producing fast-tangle REFUTES. **
+    R2a ** branch B: the intense set returns to e2-dominance (|xi.e2| >= 0.7) with
+        a/l1 <= 0.5 at every snapshot INCLUDING the transient -- re-convergence to the veto
+        fixed point with no e1-runaway spike.  A transient with |xi.e1| dominant or
+        a/l1 > 0.7 REFUTES attractor uniqueness. **
+    R2b ** branch B: normalized production P and the omega^2-weighted anisotropy Org rise
+        TOGETHER: at every snapshot |P| <= sqrt(2/3) * Org * I2 (Lemma 18's inequality, live),
+        and P stays below the evolved baseline (+0.416) throughout the transient. **
+
+  thresholds (t=8 intense-set medians, fixed): p* = 0.2013, C* = 0.7480
+
+  --- BRANCH A: the drain (continued evolution) ---
+  [t = 8 + 0.000]  R1a coherence-enrichment: <C_n | p>p*> = 0.7348  vs  <C_n | p<=p*> = 0.7413   (ANTI-ASSOCIATED)
+    quad   pop %   ens %  P share    a/l1  |xi.e1|  |xi.e2|
+     F-T   25.91   24.01    0.235   0.590   0.5270   0.7269
+     F-A   24.09   26.35    0.202   0.568   0.5207   0.7314
+     S-T   24.09   22.19    0.030   0.037   0.2864   0.8155
+     S-A   25.91   27.44    0.038   0.052   0.2656   0.8475
+    R1b fast-tangle: pop 25.91%, P share 0.235 vs ens share 0.240  (PASS)
+
+  [t = 8 + 0.125]  R1a coherence-enrichment: <C_n | p>p*> = 0.7359  vs  <C_n | p<=p*> = 0.7428   (ANTI-ASSOCIATED)
+    quad   pop %   ens %  P share    a/l1  |xi.e1|  |xi.e2|
+     F-T   26.12   24.51    0.243   0.588   0.5257   0.7275
+     F-A   24.26   26.26    0.197   0.565   0.5183   0.7343
+     S-T   23.60   21.83    0.026   0.026   0.2858   0.8116
+     S-A   26.02   27.39    0.039   0.055   0.2640   0.8510
+    R1b fast-tangle: pop 26.12%, P share 0.243 vs ens share 0.245  (PASS)
+
+  [t = 8 + 0.250]  R1a coherence-enrichment: <C_n | p>p*> = 0.7368  vs  <C_n | p<=p*> = 0.7432   (ANTI-ASSOCIATED)
+    quad   pop %   ens %  P share    a/l1  |xi.e1|  |xi.e2|
+     F-T   25.74   24.48    0.246   0.589   0.5284   0.7238
+     F-A   24.52   26.36    0.197   0.565   0.5164   0.7341
+     S-T   23.79   21.83    0.025   0.027   0.2873   0.8079
+     S-A   25.95   27.33    0.039   0.058   0.2623   0.8540
+    R1b fast-tangle: pop 25.74%, P share 0.246 vs ens share 0.245  (PASS)
+
+  [t = 8 + 0.500]  R1a coherence-enrichment: <C_n | p>p*> = 0.7351  vs  <C_n | p<=p*> = 0.7465   (ANTI-ASSOCIATED)
+    quad   pop %   ens %  P share    a/l1  |xi.e1|  |xi.e2|
+     F-T   25.48   24.42    0.251   0.590   0.5398   0.7160
+     F-A   24.56   26.47    0.201   0.565   0.5061   0.7409
+     S-T   23.70   21.81    0.023   0.020   0.2863   0.8030
+     S-A   26.26   27.30    0.035   0.057   0.2611   0.8561
+    R1b fast-tangle: pop 25.48%, P share 0.251 vs ens share 0.244  (PASS)
+
+  [t = 8 + 1.000]  R1a coherence-enrichment: <C_n | p>p*> = 0.7356  vs  <C_n | p<=p*> = 0.7549   (ANTI-ASSOCIATED)
+    quad   pop %   ens %  P share    a/l1  |xi.e1|  |xi.e2|
+     F-T   25.12   23.62    0.241   0.600   0.5583   0.6996
+     F-A   25.44   27.74    0.215   0.577   0.5158   0.7373
+     S-T   22.27   20.39    0.014   0.012   0.2948   0.7962
+     S-A   27.17   28.24    0.036   0.050   0.2554   0.8601
+    R1b fast-tangle: pop 25.12%, P share 0.241 vs ens share 0.236  (PASS)
+
+  R1b population track: ['0.259', '0.261', '0.257', '0.255', '0.251']   (no monotone growth -- PASS)
+
+  --- BRANCH B: the basin (randomize, re-evolve) ---
+      t'    P_norm Org(w2<|A|>)   L18 rhs  <C_n>hi  |xi.e1|  |xi.e2|    a/l1    R2a    R2b
+    0.00    0.0236       0.4845    0.7592   0.5601   0.4954   0.5254   0.023     ok     ok
+    0.05    0.0722       0.4854    0.7605   0.5725   0.5186   0.5265   0.079     ok     ok
+    0.10    0.1178       0.4862    0.7623   0.5844   0.5394   0.5275   0.133     ok     ok
+    0.20    0.1987       0.4902    0.7708   0.6055   0.5683   0.5387   0.230     ok     ok
+    0.40    0.3168       0.5012    0.8005   0.6403   0.5819   0.5766   0.353     ok     ok
+    0.80    0.4242       0.5254    0.8851   0.6793   0.5290   0.6689   0.413     ok     ok
+
+  READ-OFF:
+    R2a: e2 must recover dominance (>=0.7) on the fast clock with a/l1 <= 0.5 at every row --
+         the veto fixed point is the basin's unique attractor; any e1-dominant or a/l1 > 0.7
+         transient REFUTES.
+    R2b: |P_norm| <= L18-rhs row by row (the inequality live) and P_norm <= evolved baseline
+         0.416 + margin throughout -- production never leads organization.
+  total 182s

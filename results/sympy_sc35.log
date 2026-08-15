@@ -1,0 +1,5 @@
+(1) OK: exp((g/c)(log(1/th)/g)) = th^(-1/c) — g cancels, transit factor intensity-free
+(2) OK: exp(A)*G^n = exp(A + n*log G) — the chain fold
+(3) OK: 2*D*a <= 3*D*b when b >= (1-D)a and D <= 1/3 (equality exactly at D = 1/3)
+
+SC-3/SC-5 chains ADJUDICATED. Lean targets: ft_transit_factor, ft_chain_fold, dc_coherence_inherit

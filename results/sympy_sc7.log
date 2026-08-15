@@ -1,0 +1,8 @@
+step 1  OK: ||V||_E <= C3*sqrt(C2) * eps^(1/4)   (exponent 1/2 . 1/2 = 1/4)
+step 2  OK: int int |V|^3 <= C_QT * eps^(3/4),  C_QT = C4*(C3*sqrt(C2))^3
+step 3  OK: at eps = (eps_CKN/C_QT)^(4/3), C_QT*eps^(3/4) = eps_CKN exactly;
+            eps^(3/4) strictly increasing  =>  eps < boundary  =>  bound < eps_CKN
+spot    OK: rational instance C_QT=7/2, eps_CKN=1/100, eps=boundary/2 -> strict
+
+SC-7 chain ADJUDICATED: eps < (eps_CKN/C_QT)^(4/3)  ==>  C_QT*eps^(3/4) < eps_CKN
+Lean target: sc7_small_eps_choice

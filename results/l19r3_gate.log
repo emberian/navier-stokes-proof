@@ -1,0 +1,39 @@
+================================================================================================================
+L19-R3 GATE -- THE FRAGILITY CLOCK: does the production ARRANGEMENT decay faster than the STRUCTURES?  (N=64)
+================================================================================================================
+  The bridge's mechanism (the 3:1 law, exact): financing strain deforms an arrangement >= 3x
+  faster than it stretches -- so a production-carrying pattern is FRAGILE relative to the
+  structures that carry it, and maintenance across e-folds requires active reformation
+  (whence the recurrence -> DSS bridge).  Dynamical trace, measurable today:
+
+  INSTRUMENT: Eulerian autocorrelation of the production-density field q(x) = omega.S.omega vs
+  the enstrophy field e(x) = |omega|^2 over lag Delta.  Both fields advect IDENTICALLY, so the
+  sweeping contribution cancels in the RATIO of decay rates: the excess decay of q over e is
+  the arrangement's intrinsic fragility.
+
+  REGISTERED, outcomes named:
+    C-R3a ** the production field decorrelates FASTER than the enstrophy field: implied decay
+          rate ratio r_q/r_e >= ~1.5 across lags (the 3:1 mechanism's dynamical trace, diluted
+          by common-mode sweeping -- any ratio clearly > 1 confirms fragility; >= 1.5 strong).
+          REFUTED if r_q/r_e <= 1: arrangements would OUTLIVE structures -- maintenance free,
+          the 3:1 clock dynamically irrelevant, the bridge's premise dead. **
+    C-R3b ** certification that C-R3a IS an intense-set statement: the top-decile mask must
+          carry >= 50% of the global variance of q (q ~ omega^2 alpha is intensity-weighted by
+          construction).  [The hard-mask restricted-correlation variant was found MALFORMED at
+          smoke: conditioning on e and measuring e's persistence inside the mask is range
+          restriction -- it crushes corr(e) (0.972 vs 0.993) and inverts the ratio (0.38).
+          Registered as an instrument note; the mask columns are printed for the record but
+          carry no gate weight.] **
+
+  t=8 reference: mean strain (trS^2)^1/2 = 1.584  (one strain time = 0.631)
+  C-R3b variance share of q on the intense mask = 0.818   (PASS -- the global ratio is an intense-set statement)
+
+   Delta strain units   corr q   corr e   rate q   rate e   ratio  | intense: corr q   corr e   ratio
+    0.05         0.08   0.9901   0.9931    0.198    0.138    1.44             0.9895   0.9832    0.62
+    0.10         0.16   0.9622   0.9734    0.385    0.269    1.43             0.9605   0.9383    0.63
+    0.20         0.32   0.8678   0.9045    0.709    0.502    1.41             0.8661   0.8094    0.68
+    0.40         0.63   0.6335   0.7216    1.141    0.816    1.40             0.6445   0.5804    0.81
+
+  C-R3a global: min rate ratio = 1.40   (PASS (fragility confirmed))
+  (mask columns: recorded, no gate weight -- range-restriction artifact, see header)
+  total 21s

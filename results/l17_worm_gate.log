@@ -1,0 +1,28 @@
+==================================================================================================================
+TRANCHE-4 WORM-CLAUSE GATE -- the three J(C1) clauses on a REAL worm  (N=64, nu=0.006, window 0.25)
+==================================================================================================================
+  Theorem J(C1)'s per-episode clauses, tested on the strongest coherent tube of the evolved
+  DNS field (the cached t=8 snapshot).  Controls first: the identified core must BE a tube.
+
+  REGISTERED, all outcomes named:
+    C-a ** identification control: the core is a genuine tube -- nematic C_n(core) >= 0.8 and
+        shape elongation (axis/perp second moments) >= 2.  Else identification VOID. **
+    W-1 ** the veto cap on a real worm: <alpha>_core / <lam1>_core <= 0.5 (the plateau -- alpha
+        is NOT the local leading strain) AND omega_peak / <alpha>_core >= 5 (the fast/slow
+        margin; banked deep-tail value ~13 at N=128).  REFUTED if alpha ~ lam1 on the core:
+        the runaway state would exist on real data. **
+    W-2 ** Burgers core consistency: measured d(delta^2)/dt within +-0.5*(4nu + <alpha>delta^2)
+        of the predicted 4nu - <alpha>delta^2 (factor-2 class agreement on the dominant scale).
+        REFUTED if the core dynamics contradicts the relaxation law by more than the class
+        tolerance: the modulation model would be wrong. **
+    W-3 ** coherence maintenance: nematic C_n of the core at t+Dt >= C_n(t) - 0.05 (the class
+        re-satisfies; corruption is slow-clock).  REFUTED by fast-clock decoherence. **
+
+  worm at grid (np.int64(40), np.int64(47), np.int64(52)), |w|_peak = 12.855, axis = [-0.64,+0.61,-0.47]
+  C-a: nematic C_n(core) = 0.887 (>=0.8), elongation = 2.27 (>=2)   (PASS -- a genuine tube)
+  W-1: <alpha>_core = 0.656   <lam1>_core = 2.293   ratio = 0.286 (<=0.5)   omega_pk/<alpha>_core = 19.6 (>=5)   [bulk lam1 = 0.881]
+  W-1: PASS -- the veto cap holds on a real worm
+  t+0.25: worm at (np.int64(41), np.int64(47), np.int64(52)), |w|_peak = 12.258, C_n = 0.863, delta2 = 0.0251 (was 0.0241)
+  W-2: delta_B^2 = 4nu/alpha = 0.0366   delta^2/delta_B^2 = 0.66 (t), 0.69 (t+Dt)   [rate note: measured +0.0040]   (PASS -- the core sits at the Burgers radius)
+  W-3: C_n 0.887 -> 0.863   (PASS -- coherence maintained)
+  total 14s

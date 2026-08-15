@@ -1,0 +1,32 @@
+==================================================================================================================
+WORM GATE 2 -- THE EXACTNESS UPGRADE: calibrated Burgers-radius test + centreline-frame shape + kappa*delta
+==================================================================================================================
+  Jeff's standard: measurements must be exact.  The raw delta^2 estimator carries an EXACTLY
+  computable calibration: for a Gaussian Burgers profile, the omega^2-weighted transverse
+  moment under the 0.5-peak mask is 0.269 x delta^2_true (analytic), plus a grid-smearing
+  correction at 2.6 cells/core.  Fix: calibrate the IDENTICAL estimator pipeline on synthetic
+  Burgers tubes laid on the same grid; the control decides the total factor and its tolerance.
+
+  REGISTERED, outcomes named:
+    WX-0 ** calibration curve: F(delta_s^2) = estimator/true on synthetic tubes at delta_s^2 =
+         0.03, 0.05, 0.08; the analytic continuum factor is 0.269 -- grid excess quantified;
+         curve smooth (spread of F after grid-model fit <= 15%). **
+    WX-1 ** the calibrated Burgers ratio: R = delta^2_true * alpha / (4 nu) with delta^2_true =
+         raw/F at the matched scale.  EXACT-STANDARD PASS: |R - 1| <= 0.35 (alpha inhomogeneity
+         ~20% + calibration ~10%).  If R > 1 beyond band: recorded as a physical finding (core
+         fatter than its Burgers radius) with the resolution caveat, and the N>=96 re-measure
+         is REGISTERED as the exactness-grade refinement. **
+    WX-2 ** centreline-frame curvature: trace the ridge, measure kappa; report kappa*delta --
+         the H1 class constant, never before measured.  H1 needs kappa*delta <= 1/M ~ 0.1;
+         PASS if <= 0.3 (class-compatible at this resolution). **
+
+  WX-0 calibration (synthetic Burgers tube, identical estimator):
+    delta_s^2 = 0.03: estimator = 0.0099   F = 0.329  (continuum analytic 0.269; excess = grid smearing)
+    delta_s^2 = 0.05: estimator = 0.0111   F = 0.222  (continuum analytic 0.269; excess = grid smearing)
+    delta_s^2 = 0.08: estimator = 0.0239   F = 0.299  (continuum analytic 0.269; excess = grid smearing)
+    grid model est = 0.269*d2 + 0.0006: residuals ['11.9%', '26.8%', '7.5%']   (curve NOT smooth -- inspect)
+
+  worm raw estimator = 0.0213   grid-inverted delta^2_true = 0.0768   alpha = 0.656   delta_B^2 = 0.0366
+  WX-1 calibrated Burgers ratio R = 2.10   (physical finding: core fatter than Burgers -- N>=96 re-measure REGISTERED)
+  WX-2 centreline: median curvature kappa = 1570796326794.896   kappa*delta = 435225427000.211   (strongly bent -- inspect)
+  total 0s

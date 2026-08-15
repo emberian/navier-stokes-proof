@@ -1,0 +1,47 @@
+==================================================================================================================
+L16/L17 BLOCK-EXTRACTION GATE -- Riesz projection + 2x2 normal form, measured  (N=200, R=10, q=2.26)
+==================================================================================================================
+  Swept Lemma 16: the Kelvin pair is isolated (nu << nu^{1/3} hierarchy); the Riesz projection
+  P2 = (1/2pi i) contour-int (lam B - A)^{-1} B dlam is rank-2, idempotent, nu-uniformly bounded.
+  Swept Lemma 17: on ran P2 the generator is A = -c_K nu I + i Delta J + eps K, |K12| ~ kappa.
+
+  Instrument notes (registered before running): the elliptic (m=-1,+1) pair at the q ~ 2.26
+  crossing sits near omega = 0 AMONG the finite-domain edge-continuum clusters (sec 158 caution)
+  -- so the pair is identified by the MOVERS-UNDER-EPS method: the exactly-2 eigenvalues that
+  move O(eps) when strain couples the sectors (continuum movers are O(eps^2)/none).  kappa is
+  extracted from the EIGENVALUE SPLIT (split/2eps) -- immune to non-normality: damping shifts
+  the diagonal, the split is pure coupling.  Desk cross-check: sec 158's raw sigma/eps = 0.414
+  + c_K nu/eps ~ 0.24 gives kappa ~ 0.65 inside [0.57, 0.73].
+
+  REGISTERED, controls first, all outcomes named:
+    V-1  ** centroid control (banked S5-1 rerun on this code path): q=0, Re=1e7, eps=0.02 ->
+         coupled spectrum contains lambda = +/-eps within few % -- validates signs. **
+    C-0  ** eps=0 control: coupled spectrum at q=2.26 splits into decoupled sectors; the
+         movers-method finds EXACTLY 2 large movers (the pair).  != 2 -> identification void. **
+    B2-1 ** P2 from the contour around the pair: ||P2^2-P2||/||P2|| <= 1e-3, trace ~ rank = 2.
+         Registered radius nu^{1/3}/2 attempted first; if edge clusters intrude (finite-domain
+         artifact), the adaptive radius (half-distance to nearest non-pair mode) is the
+         measurement and the intrusion is recorded.  Non-idempotent at ALL radii -> Lemma 16
+         REFUTED. **
+    B2-2 ** pair damping: Re(lam pair) < 0 and O(nu): c_K = -Re lam/nu in [2,4] (registered
+         bracket from s*=0.3595); O(nu) confirmed by Re-doubling (c_K Re-stable).  If outside
+         [2,4] but O(nu) and Re-stable: bracket refinement, recorded, normal form intact. **
+    B2-3 ** coupling: kappa = split/(2 eps) in [0.57, 0.73], eps-linear (0.02 vs 0.04 within
+         ~10%), eps=0 detuning << eps kappa.  Outside bracket -> normal form REFUTED. **
+    B2-4 ** robustness: Re 2000 -> 4000 (c_K, kappa stable); contour radius halving (B2-1
+         stable). **
+
+  V-1 centroid: |lam-eps|min = 3.46e-03 (17.3%)  |lam+eps|min = 3.52e-03 (17.6%)   (FAIL -- signs)
+  C-0 movers under eps=0.04 (top 6 in the crossing box): -0.1163-0.0603j->d0.0697  -0.1163+0.0603j->d0.0697  -0.1112-0.0614j->d0.0664  -0.1112+0.0614j->d0.0664  -0.1039-0.0571j->d0.0606  -0.1039+0.0571j->d0.0606
+  C-0 movers > 0.012: 54   (NOT 2 -- identification per notes)
+  pair (eps=0): -0.11630-0.06034j, -0.11630+0.06034j   detuning = 0.12068
+  B2-2 c_K = 37.02, 37.02   (outside [2,4] -- see O(nu) check)
+  B2-3 kappa(eps=0.02) = 3.8478   kappa(eps=0.04) = 0.0000   (pair at eps=0.04: -0.08140+0.00000j, -0.08140+0.00000j)
+  B2-3 eps-linearity: |dkappa|/kappa = 384777278866.6%   bracket [0.57,0.73]: OUTSIDE   detuning/eps.kappa = 120680486.91
+  B2-1 contour: center -0.1163+0.0000j; registered radius 0.0732 encloses 32 eps=0 modes; nearest non-pair at 0.0584; adaptive radius 0.0594
+  B2-1 at radius 0.0594: ||P2^2-P2||/||P2|| = 6.63e-01   trace = 5.216-1e-10i   (FAIL)
+  B2-4 radius halved: idem = 1.00e+00  trace = 0.000   (FAIL)
+code/l16_block_gate.py:207: RuntimeWarning: divide by zero encountered in scalar divide
+  f"({'PASS -- O(nu) damping + Re-stable coupling' if abs(k4 - k2) / k2 < 0.15 else 'inspect'})",
+  B2-4 Re=4000: c_K = 72.92, 72.92 (vs 37.02, 37.02)   kappa = 1.9390 (vs 0.0000)   (inspect)
+  total 235s

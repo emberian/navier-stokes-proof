@@ -1,0 +1,56 @@
+======================================================================================================================
+LEMMA 19 GATE 2 -- the NEMATIC discriminator: true tangles vs antiparallel organization   (N=64, nu=0.006, t=8.0)
+======================================================================================================================
+  Gate 1's finding: polarization coherence C = |G*omega|/(G*|omega|) is SPECTRUM-DETERMINED
+  (V-0b: evolved 0.706 vs randomized 0.715 -- no separation) and conflates direction-TANGLED
+  regions with antiparallel-ORGANIZED ones (the financing zones): its low-C bins read
+  |xi.e2| = 0.76-0.89 -- maximally aligned, not tangled.  The correct discriminator for the
+  classification's dichotomy (coherent-class vs tangle) must be SIGN-BLIND:
+
+  NEMATIC coherence: M(x) = G_ell * (omega x omega)  (filtered dyad, PSD), eigenvalues
+  mu1 >= mu2 >= mu3, C_n = (mu1 - (mu2+mu3)/2)/tr(M) in [0,1].  C_n = 1 for a locally parallel
+  OR antiparallel line field; C_n small for direction chaos.  The tangle's independent signature
+  (Lemma 18 mechanism, measured in gate 1's control): ISOTROPIC alignment moments ~(.5,.5,.5).
+
+  REGISTERED, all outcomes named, controls first:
+    V2-0a ** discriminator validation: an ANTIPARALLEL tube pair must give omega^2-weighted
+          <C_n> > 0.95 on support while the polar C drops in the interaction zone; and the
+          crossing-forest C_n stays high on isolated support. **
+    V2-0b ** evolved vs phase-randomized top-decile C_n: evolved must sit ABOVE the randomized
+          baseline (nematic order is phase-borne, unlike polarization).  If no separation,
+          report honestly and classify by the alignment-signature instead. **
+    G19-1' ** the dichotomy per-flow: binning the top decile by C_n -- low-C_n bins (true tangle
+          candidates) must be (i) small population in the evolved flow, (ii) isotropic-signature
+          if present, (iii) per-unit production ~ 0.  Production must be carried by high-C_n
+          (organized) bins at the CAPPED rate.  REFUTED if a low-C_n bin with isotropic moments
+          carries O(1) production share at high rate: a producing tangle. **
+    G19-2' ** the fixed point: e2-dominance and a/l1 <= ~0.5 in every populated evolved bin
+          (no frozen-frame runaway anywhere).  REFUTED by e1-dominance or a/l1 -> 1. **
+    G19-3' ** control: randomized field -- per-unit production ~ 0 in ALL C_n bins, isotropic
+          moments everywhere.  Dirty control => gates void. **
+
+  V2-0a antiparallel pair: <C_n> on support = 1.0000  (polar C in interaction zone = 0.8786)   (PASS)
+  V2-0a signed crossing forest: <C_n> on support = 0.9836   (PASS (>0.9))
+
+  evolved to t=8.0 and saved snapshot (432s)
+
+  evolved flow (t=8.0):
+  [evolved t=8]  P_tot = +0.41620 (normalized)   production-weighted <C_n> = 0.6619  vs  enstrophy-weighted <C_n> (hi) = 0.7380
+     C_n bin   pop %   ens %  P share  per-unit P    a/l1  |xi.e1|  |xi.e2|  |xi.e3|
+   0.00-0.50    7.83    6.44    0.041     0.31487   0.328   0.4272   0.7488   0.2558
+   0.50-0.70   29.79   27.30    0.159     0.29101   0.330   0.4081   0.7751   0.2275
+   0.70-0.85   43.06   44.36    0.216     0.24375   0.290   0.3929   0.7808   0.2267
+   0.85-0.95   18.65   21.00    0.086     0.20400   0.325   0.3904   0.8019   0.1846
+   0.95-1.00    0.67    0.90    0.004     0.22607   0.370   0.4090   0.7909   0.1431
+
+  control: phase-randomized (same spectrum):
+  [randomized]  P_tot = +0.02357 (normalized)   production-weighted <C_n> = 0.5181  vs  enstrophy-weighted <C_n> (hi) = 0.5601
+     C_n bin   pop %   ens %  P share  per-unit P    a/l1  |xi.e1|  |xi.e2|  |xi.e3|
+   0.00-0.50   32.28   29.31    0.080     0.01126   0.011   0.5007   0.5067   0.4924
+   0.50-0.70   57.94   58.85    0.305     0.02140   0.032   0.4938   0.5327   0.4715
+   0.70-0.85    9.71   11.63   -0.004    -0.00150   0.017   0.4880   0.5415   0.4677
+   0.85-0.95    0.08    0.20   -0.006    -0.11213  -0.142   0.3274   0.8300   0.3183
+   0.95-1.00    0.00   (empty)
+
+  V2-0b top-decile nematic coherence:  evolved <C_n> = 0.7380   randomized <C_n> = 0.5601   (PASS -- nematic order is phase-borne)
+  total 433s

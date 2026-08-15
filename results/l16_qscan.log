@@ -1,0 +1,13 @@
+KAPPA-BARE Q-SCAN -- locate the band center (Delta -> 0), then the exact slope
+  REGISTERED: Q-1 interior max of the grower rate over q in {2.0,2.1,2.2,2.3,2.4}
+  (eps=0.04, Re=2000, N=200); Q-2 kappa_bare = (sigma(0.04)-sigma(0.02))/0.02 at q* -- the
+  detuning-free coupling (replaces the provisional 1.13; Floquet ideal 0.5624 + finite-core
+  corrections expected).
+  q=2.0: max Re lam = +0.01049
+  q=2.1: max Re lam = +0.01636
+  q=2.2: max Re lam = +0.01764
+  q=2.3: max Re lam = +0.01510
+  q=2.4: max Re lam = +0.00880
+  Q-1 band center q* = 2.2   (PASS -- interior)
+  Q-2 kappa_bare at q* = 1.4018   (provisional fit 1.13; Floquet ideal 0.5624)
+  total 180s

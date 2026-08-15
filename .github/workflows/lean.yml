@@ -1,0 +1,15 @@
+name: lean-verify
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install elan
+        run: curl https://elan.lean-lang.org/elan-init.sh -sSf | sh -s -- -y --default-toolchain none
+      - name: Build (kernel-verify all theorems)
+        run: |
+          export PATH="$HOME/.elan/bin:$PATH"
+          cd lean/NSFormal
+          lake exe cache get || true
+          lake build

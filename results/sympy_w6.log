@@ -1,0 +1,3 @@
+W6 verification -- the bootstrap closure arithmetic
+  with s = 1 - q^2: expression = q*(1 - q) = q(1-q)... factor: -q*(q - 1)   (>= 0 on q in [0,1]: True)
+  spot checks: s=0: 0, s=1/2: -1/2 + sqrt(2)/2 > 0, s=1: 0

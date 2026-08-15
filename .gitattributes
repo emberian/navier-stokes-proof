@@ -1,0 +1,4 @@
+# The paper and the archived instrument logs are documentation/data, not source:
+# keep the language statistics on the actual source (Lean + Python).
+paper/** linguist-documentation
+results/** linguist-documentation

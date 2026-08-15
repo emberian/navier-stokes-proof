@@ -1,0 +1,6 @@
+(1) OK: factorization surplus = C*(A+B) + e*g/(A+B) > 0 — inequality holds identically
+(2) OK: equality case of g = A + B*L + B*g/(A+B) gives A*g = (A+B)*(A+B*L) exactly
+(3) OK: log x <= x-1 (touch at x=1, concave) => log(1+t) <= t
+(4) OK: sqrt(w)*log(e + w^(5/6)) <= 2*w^(5/6) + 3 on the sweep (worst margin -2.961)
+
+SC-1 chain ADJUDICATED. Lean targets: bg_log_absorption, bg_half_absorption

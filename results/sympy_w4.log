@@ -1,0 +1,4 @@
+W4 verification -- the Gram entries, exact
+  <r, W'> (measure r dr) = -2   (claim: exactly -2 -> match = True)
+  g_delta = <r^2 moment, dU/d(delta2)> = 1   (nonzero, sign definite: claim 1)
+  circulation normalization: 1   (claim 1)
