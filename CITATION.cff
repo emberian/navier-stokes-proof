@@ -1,11 +1,10 @@
 cff-version: 1.2.0
-message: "If you use this work, please cite the paper."
-title: "Global Regularity for the Three-Dimensional Incompressible Navier-Stokes Equations on the Torus"
+message: "If you use this repository, please cite the paper (preferred-citation below)."
+title: "Verification companion: Global Regularity for the Three-Dimensional Incompressible Navier-Stokes Equations on the Torus"
 authors:
   - family-names: Cambria
     given-names: Jeffrey S.
     orcid: "https://orcid.org/0009-0008-4226-2099"
-doi: 10.5281/zenodo.21959161
 version: v001
 date-released: 2026-08-15
 license: CC-BY-4.0
@@ -16,3 +15,15 @@ keywords:
   - Millennium Prize Problems
   - Lean 4
   - formal verification
+preferred-citation:
+  type: article
+  title: "Global Regularity for the Three-Dimensional Incompressible Navier-Stokes Equations on the Torus"
+  authors:
+    - family-names: Cambria
+      given-names: Jeffrey S.
+      orcid: "https://orcid.org/0009-0008-4226-2099"
+  doi: 10.5281/zenodo.21959161
+  year: 2026
+  month: 8
+  publisher:
+    name: Zenodo
