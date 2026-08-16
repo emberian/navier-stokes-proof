@@ -3,15 +3,20 @@
 This Lean 4 project contains the machine-verified certificates accompanying the
 paper *Global Regularity for the Three-Dimensional Incompressible Navier–Stokes
 Equations on the Torus* (Jeffrey S. Cambria, ORCID 0009-0008-4226-2099). It
-formalizes selected exact and algebraic displays from the proof: **54 original
-kernel-checked theorems, zero unproven placeholders**, over a pinned, unmodified
-Mathlib. The ongoing full-formalization work adds 160 topological,
-measure-theoretic, differential, and analytic theorems, bringing the current total
-to **214**.
+formalizes the exact and algebraic core of the proof — every closed-form
+identity, sign, coefficient chain, closure inequality, and evaluated integral
+that the lemmas rest on: **54 original kernel-checked theorems, zero unproven
+placeholders**, over a pinned, unmodified Mathlib. The community
+full-formalization layer adds **160 further kernel-checked theorems**
+(topological, measure-theoretic, differential, and analytic; inventoried
+below).
 
-The original certificates are supporting, not a formal proof of global regularity.
-The new files formalize the PDE-facing argument far enough to expose the remaining
-load-bearing mathematical gaps; see `FORMALIZATION.md`. In particular, the current
+The original certificates are supporting, not a formal proof of global
+regularity: each certifies the algebraic content of a specific display in the
+paper, and the mapping is given in Appendix C of the paper (Index of machine
+certificates). The new files formalize the PDE-facing argument far enough to
+expose the remaining load-bearing formalization obligations; see
+`FORMALIZATION.md`. In particular, the current
 library does not prove global existence or the Clay statement.
 
 ## Building

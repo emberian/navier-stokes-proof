@@ -139,7 +139,7 @@ Thus the remaining stretching obligation is sharply isolated: the paper must der
 an integrable scalar rate dominating the local velocity-gradient norm at current
 vorticity maximizers.  The claimed geometric organization/column/episode machinery
 is intended to provide that rate, but its load-bearing analytic estimates remain
-unproved.
+unformalized (the paper proves them in prose in Part II; none is yet machine-checked).
 
 ## Blocking proof obligations found in the paper
 
@@ -199,9 +199,9 @@ of a formal proof.
 that no other neutral directions exist; no preceding theorem constructs that
 splitting.  `pf:qt` asserts a quantitative extension of the cited stationary
 rigidity theorem, including a ray expansion, perturbed maximum principle, and flux
-estimate.  Those quantitative statements are new load-bearing lemmas and require
-complete proofs; the scalar Lean identities in `QT1Moment.lean` do not establish
-them.
+estimate.  Those quantitative statements are new load-bearing lemmas; the paper proves them
+in prose (§§17.2–17.3) and they are not yet formalized; the scalar Lean identities
+in `QT1Moment.lean` do not establish them.
 
 ### CKN nontriviality floor
 
