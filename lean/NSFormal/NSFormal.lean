@@ -6,3 +6,13 @@ import NSFormal.Lemmas27
 import NSFormal.CampaignAlgebra
 import NSFormal.NewProofAlgebra
 import NSFormal.Integrals
+import NSFormal.Budget
+import NSFormal.Vorticity
+import NSFormal.VorticityMaximum
+import NSFormal.Domain
+import NSFormal.MaxEnvelope
+import NSFormal.PeriodicCalculus
+import NSFormal.TorusVorticity
+import NSFormal.NavierStokes
+import NSFormal.VectorCalculus
+import NSFormal.Stretching
