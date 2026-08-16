@@ -10,16 +10,26 @@ This is the verification companion to the paper
 > *Global Regularity for the Three-Dimensional Incompressible Navier–Stokes Equations
 > on the Torus* — [doi:10.5281/zenodo.21959161](https://doi.org/10.5281/zenodo.21959161)
 
-which proves global regularity for the spatially periodic case — statement (B) of the
+which claims global regularity for the spatially periodic case — statement (B) of the
 official Clay Millennium formulation: every smooth, divergence-free initial velocity
 field on the torus T³, with positive viscosity and zero external force, evolves into a
 unique global smooth solution.
 
-**What is claimed, precisely.** The proof in the paper is a closed analytic argument.
+**What is claimed, precisely.** The paper presents an analytic argument.
 The exact and algebraic core of that argument — every closed-form identity, sign,
 coefficient chain, closure inequality, and evaluated integral the lemmas rest on — is
-machine-verified here: **54 kernel-checked Lean 4 theorems, zero unproven placeholders,
-over a pinned unmodified Mathlib**. The numerical instruments are supporting, not
+machine-verified here: **54 original kernel-checked Lean 4 theorems, zero unproven placeholders,
+over a pinned unmodified Mathlib**. The ongoing full-formalization work adds 160
+topological, measure-theoretic, differential, and analytic theorems, for **214 checked theorems**
+in the current tree. These additions include a concrete nonempty compact three-torus,
+an attained spatial-maximum operator, a compact-domain Danskin/Dini theorem, and a
+corrected squared-vorticity maximum-principle closure with periodic transport,
+Laplacian, viscous-dissipation, time-integrated strain-budget identities, and concrete
+nonvacuous smooth Navier--Stokes interfaces, a derived vector-vorticity equation,
+and the elementary velocity-gradient stretching bound. They also expose unresolved
+load-bearing steps. The current Lean library does **not** prove global regularity;
+see `FORMALIZATION.md` for the exact status.
+The numerical instruments are supporting, not
 load-bearing: they motivated and cross-checked the lemmas, but no step of the proof
 consumes a numerical result. The analytic layer is rigorous prose in the paper; the
 machine certificates strengthen it and do not substitute for any part of it.
@@ -30,7 +40,8 @@ machine certificates strengthen it and do not substitute for any part of it.
 |---|---|
 | `paper/` | the paper source (`main.tex`, `refs.bib`) and the published PDF |
 | `paper/zenodo-v001-r4/` | the frozen artifacts exactly as published on Zenodo, with SHA-256 manifests and OpenTimestamps `.ots` receipts |
-| `lean/NSFormal/` | the Lean 4 + Mathlib machine certificates — `lake build` re-verifies all 54 theorems |
+| `lean/NSFormal/` | the Lean 4 + Mathlib development — `lake build` re-verifies all 214 current theorems |
+| `FORMALIZATION.md` | the full-formalization dependency map and the PDE-level proof obligations exposed so far |
 | `code/` | the symbolic-adjudication scripts (`sympy_*.py`) and the calibrated numerical instruments cited by the paper (see `code/README.md`) |
 | `results/` | the archived output log of every script in `code/` |
 
@@ -39,7 +50,7 @@ machine certificates strengthen it and do not substitute for any part of it.
 The Mathlib dependency is **never modified** — it is pinned by exact version
 (`v4.33.0`) in `lean/NSFormal/lakefile.toml` and `lake-manifest.json`; the pinned Lean
 toolchain is installed automatically from `lean-toolchain` by
-[elan](https://github.com/leanprover/elan). All 54 theorems live in our own files under
+[elan](https://github.com/leanprover/elan). All 214 current theorems live in our own files under
 `lean/NSFormal/NSFormal/`. To verify:
 
 ```

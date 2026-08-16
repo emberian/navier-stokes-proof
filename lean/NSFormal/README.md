@@ -3,16 +3,16 @@
 This Lean 4 project contains the machine-verified certificates accompanying the
 paper *Global Regularity for the Three-Dimensional Incompressible Navier–Stokes
 Equations on the Torus* (Jeffrey S. Cambria, ORCID 0009-0008-4226-2099). It
-formalizes the exact and algebraic core of the proof — every closed-form
-identity, sign, coefficient chain, closure inequality, and evaluated integral
-that the lemmas rest on: **54 kernel-checked theorems, zero unproven
-placeholders**, over a pinned, unmodified Mathlib.
+formalizes selected exact and algebraic displays from the proof: **54 original
+kernel-checked theorems, zero unproven placeholders**, over a pinned, unmodified
+Mathlib. The ongoing full-formalization work adds 160 topological,
+measure-theoretic, differential, and analytic theorems, bringing the current total
+to **214**.
 
-The certificates are supporting, not load-bearing: the proof in the paper is a
-closed analytic argument, and no step of it consumes a numerical result. Each
-theorem here certifies the algebraic content of a specific display in the
-paper; the mapping is given in Appendix C of the paper (Index of machine
-certificates).
+The original certificates are supporting, not a formal proof of global regularity.
+The new files formalize the PDE-facing argument far enough to expose the remaining
+load-bearing mathematical gaps; see `FORMALIZATION.md`. In particular, the current
+library does not prove global existence or the Clay statement.
 
 ## Building
 
@@ -40,9 +40,23 @@ has been checked by the Lean kernel, and the library contains no `sorry`.
 | `NSFormal/CampaignAlgebra.lean` | 26 | the episode-machinery algebra (adiabatic boundary exponent, window slack, bootstrap root closure, log-norm assembly, cell-shell series, Hölder exponents, the superseded defect-gap dichotomy) and the closure inequalities of the repair lemmas: close pairs, background absorption, circularization, transit factor and chain fold, coherence inheritance, slice scaling, sector uniformity, depletion exponent, squeeze arithmetic |
 | `NSFormal/NewProofAlgebra.lean` | 1 | the far-field exponent chain (x^{−1/3})^{−5/2} = x^{5/6} |
 | `NSFormal/Integrals.lean` | 11 | the evaluated integrals: the Duhamel integral, the kernel tails ∫s⁻⁴ and ∫s⁻⁶, the Gram pairing ⟨r, W′⟩ = −2, the volume Chebyshev bound, the ℂ²-skew content of the episode gain, and the Fujita–Kato beta integral = π with its three supporting theorems |
+| `NSFormal/Budget.lean` | 3 | the measure-theoretic Hölder estimate, its finite-time enstrophy-budget corollary, and the integrated three-term strain budget |
+| `NSFormal/Domain.lean` | 2 | the concrete period-`2π`, three-dimensional torus and proofs that its whole space is nonempty and compact |
+| `NSFormal/MaxEnvelope.lean` | 30 | attained spatial maxima on nonempty compact spaces; sup-norm Lipschitz continuity; maximizer sets; the compact-domain Danskin upper-Dini estimate; and constant- and variable-rate maximizer-only Grönwall closure |
+| `NSFormal/Vorticity.lean` | 10 | first and second derivatives of vorticity magnitude and half squared magnitude; the corrected viscous evolution identities; favorable-sign inequalities; and conditional Grönwall closures |
+| `NSFormal/VorticityMaximum.lean` | 9 | the continuous half-squared-vorticity field, its sup-norm derivative from a differentiable vorticity curve, and the corrected constant- and variable-rate maximizer-only parabolic maximum-principle closures |
+| `NSFormal/PeriodicCalculus.lean` | 15 | the canonical periodic lift and representative; transport cancellation and scalar-Laplacian sign at torus maxima; nonnegative gradient square; and `⟪ω, Δω⟫ = Δ(|ω|²/2) - |∇ω|²` |
+| `NSFormal/TorusVorticity.lean` | 7 | the corrected torus maximum principle, including variable-rate, vector-equation, time-integral, and explicit strain-budget closures |
+| `NSFormal/NavierStokes.lean` | 17 | concrete and lifted torus differential operators; classical and jointly smooth velocity-pressure predicates; and zero-solution witnesses proving those interfaces nonvacuous |
+| `NSFormal/VectorCalculus.lean` | 58 | Fréchet-coordinate reconstruction; mixed-partial, pressure, convection, Laplacian, and time-curl identities; and derivation of the classical vector-vorticity equation from smooth Navier--Stokes for a regular concrete curl field |
+| `NSFormal/Stretching.lean` | 9 | the honest full-gradient and symmetric-strain bounds for `⟪ω,(ω·∇)u⟫`, plus their local-rate/maximizer wrappers |
 
 `NSFormal/Basic.lean` is the standard project scaffold and contains no
-mathematical content; the 54 theorems live in the seven files above.
+mathematical content; the original 54 certificates live in the original seven files,
+and the 160 new formalization theorems live in `Budget.lean`, `Domain.lean`,
+`MaxEnvelope.lean`, `Vorticity.lean`, `VorticityMaximum.lean`,
+`PeriodicCalculus.lean`, `TorusVorticity.lean`, `NavierStokes.lean`, and
+`VectorCalculus.lean`, and `Stretching.lean`.
 
 ## License
 
