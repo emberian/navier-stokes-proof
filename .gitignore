@@ -11,19 +11,20 @@ __pycache__/
 *.bak
 
 # --- paper build artifacts and superseded freezes ---
-/paper/*.aux
-/paper/*.bbl
-/paper/*.bcf
-/paper/*.blg
-/paper/*.fdb_latexmk
-/paper/*.fls
-/paper/*.log
-/paper/*.out
-/paper/*.run.xml
-/paper/build.log
-/paper/SUPERSEDED-*/
+/paper/v002/
+/paper/superseded/
+/paper/v001/*.aux
+/paper/v001/*.bbl
+/paper/v001/*.bcf
+/paper/v001/*.blg
+/paper/v001/*.fdb_latexmk
+/paper/v001/*.fls
+/paper/v001/*.log
+/paper/v001/*.out
+/paper/v001/*.run.xml
+/paper/v001/build.log
 /paper/FREEZES-README.txt
-/paper/THEOREM-A.md
+/paper/v001/THEOREM-A.md
 
 # --- code/: curated ship set only (paper-cited instruments + sympy adjudication) ---
 /code/*

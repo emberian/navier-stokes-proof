@@ -59,8 +59,8 @@ dependency roadmap are tracked in `FORMALIZATION.md`.
 
 | path | contents |
 |---|---|
-| `paper/` | the paper source (`main.tex`, `refs.bib`) and the published PDF |
-| `paper/zenodo-v001-r4/` | the frozen artifacts exactly as published on Zenodo, with SHA-256 manifests and OpenTimestamps `.ots` receipts |
+| `paper/v001/` | the published paper v001: source (`main.tex`, `refs.bib`) and the published PDF |
+| `paper/v001/zenodo-v001-r4/` | the frozen artifacts exactly as published on Zenodo, with SHA-256 manifests and OpenTimestamps `.ots` receipts |
 | `lean/NSFormal/` | the Lean 4 + Mathlib development: the paper's 54 certificates and the community formalization layer — `lake build` re-verifies all of it |
 | `FORMALIZATION.md` | the full-formalization roadmap and current proof obligations |
 | `code/` | the symbolic-adjudication scripts (`sympy_*.py`) and the calibrated numerical instruments cited by the paper (see `code/README.md`) |
@@ -99,7 +99,7 @@ family each `sympy_*.py` script adjudicates.
 
 ## Integrity
 
-`paper/zenodo-v001-r4/MANIFEST.sha256` fixes the exact bytes of the published
+`paper/v001/zenodo-v001-r4/MANIFEST.sha256` fixes the exact bytes of the published
 artifacts; the accompanying `.ots` files are OpenTimestamps receipts anchoring those
 bytes in the Bitcoin blockchain (verify with `ots verify <file>.ots`). The repository
 state at publication of paper v001 is permanently addressable at the git tag
