@@ -151,6 +151,13 @@ an actual nonconstant sine/cosine mode witnesses nonvacuity.  This closes period
 by parts for smooth scalar transport.  Heat-kernel smoothing, Hodge/Leray projection, and the
 vortex-line disintegration remain separate analytic layers.
 
+`NSFormal/ForTauCeti/PeriodicIntegration.lean` now extracts the one-period kernel from that
+concrete dependency graph and generalizes the scalar coordinate theorem to normalized
+`UnitAddTorus (Fin (n + 1))`.  Its constant-mode and nonconstant unit-period sine/cosine tests
+pin the zero-mode and `2π` derivative conventions.  The original period-`2π` module consumes
+the extracted circle lemmas through compatibility wrappers.  This is a smooth proof seed for
+Tau Ceti; intrinsic weak periodic derivatives and the Sobolev-density extension remain open.
+
 `NSFormal/Enstrophy.lean` now closes the smooth global enstrophy identity on the same
 concrete torus.  Haar integration is constructed as a continuous linear map on sup-norm
 continuous fields, so the existing time derivative of vorticity differentiates

@@ -9,9 +9,9 @@ that the lemmas rest on: **89 kernel-checked certificate theorems, zero
 unproven placeholders** (the 54 original certificates, the 16 v002 repair
 certificates in `V002Repairs.lean`, and the 19 closure-wave certificates in
 `R15Closures.lean`), over a pinned, unmodified Mathlib. The community
-full-formalization layer adds **963 further kernel-checked theorems**
+full-formalization layer adds **978 further kernel-checked theorems**
 (topological, measure-theoretic, differential, and analytic; inventoried
-below), bringing the current total to **1052**.
+below), bringing the current total to **1067**.
 
 The original certificates are supporting, not a formal proof of global
 regularity: each certifies the algebraic content of a specific display in the
@@ -58,6 +58,7 @@ has been checked by the Lean kernel, and the library contains no `sorry`.
 | `NSFormal/VorticityMaximum.lean` | 9 | the continuous half-squared-vorticity field, its sup-norm derivative from a differentiable vorticity curve, and the corrected constant- and variable-rate maximizer-only parabolic maximum-principle closures |
 | `NSFormal/PeriodicCalculus.lean` | 15 | the canonical periodic lift and representative; transport cancellation and scalar-Laplacian sign at torus maxima; nonnegative gradient square; and `⟪ω, Δω⟫ = Δ(|ω|²/2) - |∇ω|²` |
 | `NSFormal/PeriodicIntegration.lean` | 26 | one-period integration by parts; its measured-circle and coordinate-slice forms; the volume-preserving coordinate split of `T³`; Fubini reconstruction; constant derivatives; addition, subtraction, quotient, and two- and three-factor coordinate Leibniz rules; the full transport identity with visible divergence term; the componentwise variable-direction triple-product integration identity; and its divergence-free skew-adjoint corollary, with a nonconstant sine/cosine witness |
+| `NSFormal/ForTauCeti/PeriodicIntegration.lean` | 15 | extraction of the general one-period and measured-circle integration kernels; smooth scalar coordinate integration by parts on normalized `UnitAddTorus (Fin (n + 1))`; the constant-mode derivative gate; and nonconstant unit-period sine/cosine tests pinning the `2π` Fourier derivative normalization and sign |
 | `NSFormal/Enstrophy.lean` | 30 | the continuous Haar-integration functional; differentiation of global half-enstrophy; compatibility of descended and PDE first/second derivatives and divergences; exact pairing and diffusion expansion of the concrete vorticity equation; periodic transport and scalar-Laplacian cancellation; the assembled classical Navier--Stokes enstrophy balance; identification of its stretching density with the zero-safe coordinate quotient density; and the quotient/optimal-weighted-variance production bound for that actual PDE term |
 | `NSFormal/DynamicCriterion.lean` | 29 | the corrected logarithmic energy-paid criterion: `E' ≤ C Θ² E³`, `Θ² E ≤ M`, and `∫ E ≤ B` imply `E(t) ≤ E(a) exp(CMB)`; the zero-safe signed production correlation and quotient fraction with their `[0,1]` bounds and exact quotient reconstruction; the exact Hilbert-space residual identity behind Cauchy saturation; exact cancellation of the auxiliary quotient from the correlated critical factor; amplitude and common-scale invariance; the correlation-refined criterion; the linear growth and unboundedness of the correlated critical factor along any fixed positive-profile concentration family; exact scale invariance of the localized helicity-defect gap and of its normalized correlation loss; the explicit sign-free saturation bound on the positive-production correlation; pointwise and dynamic bounds of the complete correlated critical factor by both `((1-H²/(AV))Θ)²E` and the orbit-average form `((1-(r-δ)²/V)Θ)²E`; and the robust positive-part gap after paying a certified approximate-first-integral transport error |
 | `NSFormal/KineticEnergy.lean` | 19 | the concrete torus kinetic energy and pressure work; pressure and convective cancellation; the exact kinetic-energy derivative for the actual classical Navier--Stokes predicate; its finite-time identity and palinstrophy budget; and the resulting curl-enstrophy time budget |
@@ -84,12 +85,13 @@ has been checked by the Lean kernel, and the library contains no `sorry`.
 `NSFormal/Basic.lean` is the standard project scaffold and contains no
 mathematical content; the 89 certificates live in the original seven files
 plus `V002Repairs.lean` (16) and `R15Closures.lean` (19),
-and the 963 added formalization theorems include the new research identities in
+and the 978 added formalization theorems include the new research identities in
 `NewProofAlgebra.lean` and the theorems in `Anisotropy.lean`, `AnisotropicIntegration.lean`,
 `AnisotropicCriterion.lean`,
 `DirectorTensor.lean`, `VortexStretching.lean`, `Budget.lean`, `Domain.lean`,
 `MaxEnvelope.lean`, `Vorticity.lean`, `VorticityMaximum.lean`,
-`PeriodicCalculus.lean`, `PeriodicIntegration.lean`, `Enstrophy.lean`,
+`PeriodicCalculus.lean`, `PeriodicIntegration.lean`,
+`ForTauCeti/PeriodicIntegration.lean`, `Enstrophy.lean`,
 `DynamicCriterion.lean`, `KineticEnergy.lean`, `ConcreteDynamicCriterion.lean`,
 `LocalizedHelicity.lean`, `FlowAveraging.lean`, `FlowKoopman.lean`, `TorusFlow.lean`,
 `DivCurl.lean`, `PeriodicSobolev.lean`, `PeriodicSobolevEuclidean.lean`,

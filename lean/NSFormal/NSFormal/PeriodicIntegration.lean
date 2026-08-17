@@ -1,4 +1,5 @@
 import NSFormal.Domain
+import NSFormal.ForTauCeti.PeriodicIntegration
 
 /-!
 # Periodic integration by parts
@@ -20,10 +21,8 @@ identities. -/
 theorem intervalIntegral_deriv_eq_zero_of_periodic
     {T : ℝ} {f : ℝ → ℝ} (hT : 0 ≤ T) (hf : ContDiff ℝ 1 f)
     (hper : Periodic f T) :
-    ∫ x in (0 : ℝ)..T, deriv f x = 0 := by
-  rw [intervalIntegral.integral_deriv_of_contDiffOn_Icc hf.contDiffOn hT]
-  have hend : f T = f 0 := by simpa using hper 0
-  rw [hend, sub_self]
+    ∫ x in (0 : ℝ)..T, deriv f x = 0 :=
+  ForTauCeti.intervalIntegral_deriv_eq_zero_of_periodic hT hf hper
 
 /-- Integration by parts over one period, with the endpoint terms cancelled
 by genuine periodicity rather than by an abstract skew-adjointness axiom. -/
@@ -31,15 +30,9 @@ theorem intervalIntegral_mul_deriv_eq_neg_deriv_mul_of_periodic
     {T : ℝ} {f g : ℝ → ℝ} (hf : ContDiff ℝ 1 f) (hg : ContDiff ℝ 1 g)
     (hfper : Periodic f T) (hgper : Periodic g T) :
     ∫ x in (0 : ℝ)..T, f x * deriv g x =
-      -∫ x in (0 : ℝ)..T, deriv f x * g x := by
-  have hfac : AbsolutelyContinuousOnInterval f 0 T :=
-    hf.contDiffOn.absolutelyContinuousOnInterval
-  have hgac : AbsolutelyContinuousOnInterval g 0 T :=
-    hg.contDiffOn.absolutelyContinuousOnInterval
-  rw [hfac.integral_mul_deriv_eq_deriv_mul hgac]
-  have hfend : f T = f 0 := by simpa using hfper 0
-  have hgend : g T = g 0 := by simpa using hgper 0
-  rw [hfend, hgend, sub_self, zero_sub]
+      -∫ x in (0 : ℝ)..T, deriv f x * g x :=
+  ForTauCeti.intervalIntegral_mul_deriv_eq_neg_deriv_mul_of_periodic
+    hf hg hfper hgper
 
 /-- The same integration-by-parts identity as an equality of integrals over
 the concrete measured circle.  `liftIoc` merely chooses the standard
@@ -52,11 +45,9 @@ theorem addCircle_integral_mul_deriv_eq_neg_deriv_mul_of_periodic
     (∫ x : AddCircle T,
         AddCircle.liftIoc T 0 (fun r => f r * deriv g r) x) =
       -(∫ x : AddCircle T,
-        AddCircle.liftIoc T 0 (fun r => deriv f r * g r) x) := by
-  rw [AddCircle.integral_liftIoc_eq_intervalIntegral,
-    AddCircle.integral_liftIoc_eq_intervalIntegral]
-  simpa using
-    intervalIntegral_mul_deriv_eq_neg_deriv_mul_of_periodic hf hg hfper hgper
+        AddCircle.liftIoc T 0 (fun r => deriv f r * g r) x) :=
+  ForTauCeti.addCircle_integral_mul_deriv_eq_neg_deriv_mul_of_periodic
+    hf hg hfper hgper
 
 /-- A concrete nonconstant smooth periodic field witnesses that the preceding
 interfaces are not vacuous. -/

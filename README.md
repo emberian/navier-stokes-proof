@@ -55,7 +55,7 @@ strengthen it and do not substitute for any part of it.
 
 **The community formalization layer.** Beginning with PR #1 (ember arlynx), the
 repository also hosts an in-progress formalization of the PDE-level argument itself:
-**963 additional kernel-checked theorems**, for **1052 theorems total**. This layer is
+**978 additional kernel-checked theorems**, for **1067 theorems total**. This layer is
 distinct from the paper's 89 certificates and does **not** prove global regularity.
 
 “Custom formalization” here means new definitions and proofs written in ordinary
@@ -84,6 +84,12 @@ Navier–Stokes-specific estimate that would make it unconditional remains open.
 `FORMALIZATION.md`, `RESEARCH.md`, and `DYNAMICS.md` for the dependency map, audit,
 and active research targets.
 
+The first `ForTauCeti` extraction module now separates the general one-period
+integration-by-parts kernel from the paper-specific dependency graph. It generalizes the smooth
+scalar coordinate theorem to normalized `UnitAddTorus (Fin (n + 1))`, proves the constant-mode
+gate, and checks the unit-period `2π` Fourier derivative normalization on nonconstant
+sine/cosine modes. This is reusable smooth infrastructure, not weak solution theory.
+
 ## Contents
 
 | path | contents |
@@ -92,10 +98,11 @@ and active research targets.
 | `paper/v001/zenodo-v001-r4/` | v001's frozen artifacts as published on Zenodo, with SHA-256 manifests and OpenTimestamps `.ots` receipts (paper files carry the `-v001` suffix locally; the Zenodo v1 record predates the naming convention) |
 | `paper/v002/` | **the current paper v002**: source (`main.tex`, `refs.bib`) |
 | `paper/v002/zenodo-v002-r1/` | v002's frozen artifacts as published on Zenodo (2026-08-17): `global-regularity-navier-stokes-torus-v002.pdf`, the Lean formalization zip, frozen source copies, SHA-256 manifests, and completed Bitcoin-attested `.ots` receipts |
-| `lean/NSFormal/` | the Lean 4 + Mathlib development — `lake build` re-verifies all 1052 current theorems |
+| `lean/NSFormal/` | the Lean 4 + Mathlib development — `lake build` re-verifies all 1067 current theorems |
 | `FORMALIZATION.md` | the full-formalization dependency map and current PDE-level proof obligations |
 | `RESEARCH.md` | the independent analytic audit, rigorous replacement reduction, and active research program |
 | `DYNAMICS.md` | the energy-paid filtered near/far theorem, cubic heat-flux reduction, and dynamic scale-variation target |
+| `ForTauCeti/` | extraction queue, portability audit, and provenance dossiers for work intended to mature through Tau Ceti |
 | `code/` | the symbolic-adjudication scripts (`sympy_*.py`) and calibrated numerical instruments cited by the paper (see `code/README.md`) |
 | `results/` | the archived output log of every script in `code/` |
 
