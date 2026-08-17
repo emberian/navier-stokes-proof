@@ -5,8 +5,8 @@ authors:
   - family-names: Cambria
     given-names: Jeffrey S.
     orcid: "https://orcid.org/0009-0008-4226-2099"
-version: v001
-date-released: 2026-08-15
+version: v002
+date-released: 2026-08-17
 license: CC-BY-4.0
 repository-code: "https://github.com/truthintime/navier-stokes-proof"
 keywords:
