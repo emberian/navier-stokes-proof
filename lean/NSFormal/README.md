@@ -5,8 +5,10 @@ paper *Global Regularity for the Three-Dimensional Incompressible Navier–Stoke
 Equations on the Torus* (Jeffrey S. Cambria, ORCID 0009-0008-4226-2099). It
 formalizes the exact and algebraic core of the proof — every closed-form
 identity, sign, coefficient chain, closure inequality, and evaluated integral
-that the lemmas rest on: **54 original kernel-checked theorems, zero unproven
-placeholders**, over a pinned, unmodified Mathlib. The community
+that the lemmas rest on: **89 kernel-checked certificate theorems, zero
+unproven placeholders** (the 54 original certificates, the 16 v002 repair
+certificates in `V002Repairs.lean`, and the 19 closure-wave certificates in
+`R15Closures.lean`), over a pinned, unmodified Mathlib. The community
 full-formalization layer adds **160 further kernel-checked theorems**
 (topological, measure-theoretic, differential, and analytic; inventoried
 below).
@@ -57,7 +59,8 @@ has been checked by the Lean kernel, and the library contains no `sorry`.
 | `NSFormal/Stretching.lean` | 9 | the honest full-gradient and symmetric-strain bounds for `⟪ω,(ω·∇)u⟫`, plus their local-rate/maximizer wrappers |
 
 `NSFormal/Basic.lean` is the standard project scaffold and contains no
-mathematical content; the original 54 certificates live in the original seven files,
+mathematical content; the 88 certificates live in the original seven files
+plus `V002Repairs.lean` (16) and `R15Closures.lean` (19),
 and the 160 new formalization theorems live in `Budget.lean`, `Domain.lean`,
 `MaxEnvelope.lean`, `Vorticity.lean`, `VorticityMaximum.lean`,
 `PeriodicCalculus.lean`, `TorusVorticity.lean`, `NavierStokes.lean`, and

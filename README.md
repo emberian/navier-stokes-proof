@@ -15,7 +15,7 @@ official Clay Millennium formulation: every smooth, divergence-free initial velo
 field on the torus T³, with positive viscosity and zero external force, evolves into a
 unique global smooth solution.
 
-## Erratum (2026-08-16) — repair in progress
+## Erratum — resolved in v002 (2026-08-17)
 
 The first external review of this repository
 ([PR #1](https://github.com/truthintime/navier-stokes-proof/pull/1), ember arlynx)
@@ -29,18 +29,26 @@ chain on the maximum envelope ‖ω(t)‖∞, whose analytic skeleton is machine
 the community formalization contributed in the same PR — is being carried out for a
 revised version (v002) of the paper.
 
-**Until v002 is published, the proof should be read as carrying a known,
-credited, repair-in-progress gap:** the architecture (the exact laws, the linear
-theory, the episode cap, the strain budget, and the rigidity squeeze) is unaffected,
-but the chain section as written is not correct. This section will be updated when
-the revision is published.
+**v002 is published (2026-08-17, same DOI, new version) and closes this erratum.**
+The chain is recast on the maximum envelope exactly as planned — and the revision
+went far beyond the single repair: an internal adversarial review produced fifteen
+graded findings, all of which are closed in v002 (five structural holes closed by
+derivation or principled retirement — the concentration-dichotomy funnel with a
+self-similar rigidity endgame, the circulation-floor ledger with derived
+Γ_min and c_E, the seeded episode class, the averaging lemma, and the
+fixed-dissipation reduction of the linear theory's load — plus ten smaller
+findings). The full version note is in the paper; v001 remains available under
+the same concept DOI as the superseded version.
 
-**What is claimed, precisely.** The proof in the paper is a closed analytic argument
-(see the Erratum above for its current status). The exact and algebraic core of that
-argument — every closed-form identity, sign, coefficient chain, closure inequality,
-and evaluated integral the lemmas rest on — is machine-verified here: **54
-kernel-checked Lean 4 theorems, zero unproven placeholders, over a pinned unmodified
-Mathlib**. The numerical instruments are supporting, not load-bearing: they motivated
+**What is claimed, precisely.** The proof in the paper (v002) is a closed analytic
+argument. The exact and algebraic core of that argument — every closed-form
+identity, sign, coefficient chain, closure inequality, and evaluated integral the
+lemmas rest on — is machine-verified here: **89 kernel-checked Lean 4 theorems,
+zero unproven placeholders, over a pinned unmodified Mathlib** (the original 54,
+the 16 v002 repair certificates, and the 19 closure-wave certificates). A
+certified-numerics layer (`code/numerics_*.py`) additionally archives explicit
+upper bounds for the named kernel, embedding, and threshold constants — proved
+tail majorants, outward rounding; the paper consumes none of these values. The numerical instruments are supporting, not load-bearing: they motivated
 and cross-checked the lemmas, but no step of the proof consumes a numerical result.
 The analytic layer is rigorous prose in the paper; the machine certificates
 strengthen it and do not substitute for any part of it.
@@ -51,7 +59,7 @@ repository also hosts an in-progress formalization of the PDE-level argument its
 Navier–Stokes and vorticity-equation predicates with nonvacuous witnesses, the
 derived vector-vorticity equation, measure-theoretic strain-budget estimates, and
 the maximum-envelope machinery (attained maxima, a compact-domain Danskin/Dini
-theorem, corrected parabolic closures). This layer is distinct from the paper's 54
+theorem, corrected parabolic closures). This layer is distinct from the paper's 89
 certificates: it does **not** yet prove global regularity, and its status and
 dependency roadmap are tracked in `FORMALIZATION.md`.
 
@@ -60,8 +68,10 @@ dependency roadmap are tracked in `FORMALIZATION.md`.
 | path | contents |
 |---|---|
 | `paper/v001/` | the published paper v001: source (`main.tex`, `refs.bib`) and the published PDF |
-| `paper/v001/zenodo-v001-r4/` | the frozen artifacts exactly as published on Zenodo, with SHA-256 manifests and OpenTimestamps `.ots` receipts |
-| `lean/NSFormal/` | the Lean 4 + Mathlib development: the paper's 54 certificates and the community formalization layer — `lake build` re-verifies all of it |
+| `paper/v001/zenodo-v001-r4/` | v001's frozen artifacts as published on Zenodo, with SHA-256 manifests and OpenTimestamps `.ots` receipts (paper files carry the `-v001` suffix locally; the Zenodo v1 record predates the naming convention) |
+| `paper/v002/` | **the current paper v002**: source (`main.tex`, `refs.bib`) |
+| `paper/v002/zenodo-v002-r1/` | v002's frozen artifacts as published on Zenodo (2026-08-17): `global-regularity-navier-stokes-torus-v002.pdf`, the Lean formalization zip, frozen source copies, SHA-256 manifests, and completed Bitcoin-attested `.ots` receipts |
+| `lean/NSFormal/` | the Lean 4 + Mathlib development: the paper's 89 certificates and the community formalization layer — `lake build` re-verifies all of it |
 | `FORMALIZATION.md` | the full-formalization roadmap and current proof obligations |
 | `code/` | the symbolic-adjudication scripts (`sympy_*.py`) and the calibrated numerical instruments cited by the paper (see `code/README.md`) |
 | `results/` | the archived output log of every script in `code/` |
@@ -72,7 +82,7 @@ The Mathlib dependency is **never modified** — it is pinned by exact version
 (`v4.33.0`) in `lean/NSFormal/lakefile.toml` and `lake-manifest.json`; the pinned Lean
 toolchain is installed automatically from `lean-toolchain` by
 [elan](https://github.com/leanprover/elan). All theorems live in our own files under
-`lean/NSFormal/NSFormal/` — the paper's 54 certificates (mapped display-by-display in
+`lean/NSFormal/NSFormal/` — the paper's 89 certificates (mapped display-by-display in
 Appendix C of the paper) and the community formalization files (inventoried in
 `lean/NSFormal/README.md`). To verify:
 
@@ -99,11 +109,15 @@ family each `sympy_*.py` script adjudicates.
 
 ## Integrity
 
-`paper/v001/zenodo-v001-r4/MANIFEST.sha256` fixes the exact bytes of the published
-artifacts; the accompanying `.ots` files are OpenTimestamps receipts anchoring those
-bytes in the Bitcoin blockchain (verify with `ots verify <file>.ots`). The repository
-state at publication of paper v001 is permanently addressable at the git tag
-[`paper-v001`](https://github.com/truthintime/navier-stokes-proof/tree/paper-v001).
+`paper/v001/zenodo-v001-r4/MANIFEST.sha256` and
+`paper/v002/zenodo-v002-r1/MANIFEST.sha256` fix the exact bytes of the published
+artifacts of each version; the accompanying `.ots` files are OpenTimestamps receipts
+anchoring those bytes in the Bitcoin blockchain (verify with `ots verify
+<file>.ots`; both versions' receipts carry completed block attestations). The
+repository state at each publication is permanently addressable at the git tags
+[`paper-v001`](https://github.com/truthintime/navier-stokes-proof/tree/paper-v001)
+and
+[`paper-v002`](https://github.com/truthintime/navier-stokes-proof/tree/paper-v002).
 
 ## License and citation
 

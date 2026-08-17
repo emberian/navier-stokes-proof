@@ -1,0 +1,7 @@
+[PASS] bg_calibrated_log  min over t at t*=1/ε−1, defect = 1 - epsilon ≥ 0 for ε ≤ 1
+[PASS] bg_split_coefficient_pin  Bε/(A+B) = 3/8
+[PASS] bg_split_cost  8/3 = 2.6667 < e = 2.7183; log(8/3) = 0.9808 < 1
+[PASS] bg_display_end_to_end  γ* ≤ 2A+2B[1+log(e+C_δ(A+B))] on the full grid incl. B≫A; min margin 3.714e-06 at A=1e-06, B=1e-06, C_δ=0.1, λ=0.125
+[PASS] shell_series_exact  Σ 2^(3k)(2^k ℓ_N)^(−5) = 4/(3*l_N**5) — the '=' in pf:cp(iv) is now exact (w9_shell_series)
+
+5/5 gates PASS, 0 FAIL

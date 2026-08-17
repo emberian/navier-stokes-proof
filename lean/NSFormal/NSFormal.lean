@@ -16,3 +16,5 @@ import NSFormal.TorusVorticity
 import NSFormal.NavierStokes
 import NSFormal.VectorCalculus
 import NSFormal.Stretching
+import NSFormal.V002Repairs
+import NSFormal.R15Closures

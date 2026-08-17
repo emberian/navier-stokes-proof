@@ -1,0 +1,23 @@
+[PASS] omega_prime_closed_form  Om'(r) = (2/r^3)[e^{-r^2}(1+r^2) - 1] exactly
+[PASS] omega_strictly_decreasing  e^x > 1 + x (x>0, second-derivative + series argument) => Om' < 0 strictly
+[PASS] omega_prime_grid  Om' < 0 spot-checked on (0, 8]
+[PASS] no_neutral_modes  W' = -4 r e^{-r^2} < 0 for r > 0: no embedded neutral mode at any radius
+[PASS] gram_pairing_minus2  <r, W'> = int W' r^2 dr = -2 exactly (translation pair, removed by modulation)
+[PASS] leakage_exact  core-weight mass beyond R_b is EXACTLY e^{-R_b^2}
+  band-edge table (floor Om(R_b), leakage e^{-R_b^2}):
+    R_b = 3/2: floor 0.397600   leakage 0.105399
+    R_b =   2: floor 0.245421   leakage 0.0183156
+    R_b = 5/2: floor 0.159691   leakage 0.00193045
+[PASS] cf_floor_directed  c_f = (1-e^-4)/4 = 0.24542109 >= 0.245420; leak 0.0183156 <= 0.0183157
+[PASS] leakage_inside_w5_slack  leakage < (1/2)/27: inside the half-per-window w5 slack with 27x margin
+[PASS] frullani_ln2  int Om(r) 2r e^{-r^2} dr = int (e^{-u}-e^{-2u})/u du = ln 2 exactly
+[PASS] mean_above_floor  core-mean rate ln 2 = 0.693147 ~ 2.8x the band-edge floor (consistent)
+[PASS] cav_coefficients  1/c_f <= 4.07465; 1/(2c_f) <= 2.03733; 1/(4c_f^2) <= 4.15069
+
+CERTIFIED RESULTS (stage N3):
+  c_f      >= 0.245420          (= Omega(2) = (1-e^-4)/4, floor, rounded down)
+  leakage  <= 0.0183157         (= e^-4 exactly; < 2%, w5 slack margin 27x)
+  mean rate = ln 2 = 0.69314718  (exact, Frullani)
+  C_av <= C_tau[4.07465/c_w + 6.18802 C_d]   (coefficients rounded up)
+
+11/11 gates PASS, 0 FAIL

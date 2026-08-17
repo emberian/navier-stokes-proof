@@ -1,0 +1,21 @@
+[PASS] mollifier_norm  int phi = 1 exactly
+[PASS] mollifier_grad_exact  C_phi = |grad phi|_L1 = 35/8 exactly
+[PASS] mollifier_moment  first moment = 105/192 < 1: the 'first moment <= ell' clause holds verbatim
+[PASS] cutoff_c1_ends  chi(1)=1, chi(2)=0, chi'(1)=chi'(2)=0: C^1 at both ends
+[PASS] cutoff_derivative_forms  chi' = -(pi/2)sin(pi(s-1)); chi'' = -(pi^2/2)cos(pi(s-1)) exactly
+[PASS] cutoff_cpsi  C_psi <= |chi''| + 2|chi'|/s (s>=1) = pi^2/2 + pi = 8.076395
+[PASS] shell_series_8_7  sum 8^-m = 8/7 exactly
+[PASS] ch_closed_form  C_h r^{-3/2} = [per-shell CS sum]^{1/2} with C_h = sqrt(8/7) k3^{1/2} C_K'
+[PASS] ch_directed  C_h = sqrt(8/7) sqrt(4pi/3) (0.228699) = 0.5003853 -> 0.500386 (up)
+[PASS] theta_directed  theta = [D0 mu0/(2C_h)]^2 = 0.9984578*(D0 mu0)^2 >= 0.99845*(D0 mu0)^2
+[PASS] theta_near_unity  2C_h is within 0.09% of 1: the rent floor is (D0 mu0)^2 to a quarter percent
+[PASS] window_cube  343 = 7^3: the B_{7Kr} rent ball vs the (Kr)-mollification scale
+[PASS] leak_clause_form  the viscous-leakage clause K >= C_psi/(343 theta) uses 1/686 = (1/2)/343
+
+CERTIFIED RESULTS (stage N5, slice a):
+  C_phi  = 35/8 exactly          (quartic bump; moment 105/192 < 1)
+  C_psi <= pi^2/2 + pi = 8.076395   (cos^2 window, W^2-inf)
+  C_h   <= 0.500386          (= sqrt(8/7) sqrt(k3) C_K', closed form)
+  theta >= 0.99845*(D0 mu0)^2   (rent floor ~ (D0 mu0)^2 to 0.17%)
+
+13/13 gates PASS, 0 FAIL

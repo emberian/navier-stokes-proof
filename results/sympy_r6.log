@@ -1,0 +1,8 @@
+[PASS] skew_divergence_exact  div(g(r^2) * (-y f, x f, 0)) = 0 identically
+[PASS] lean_core_algebra  the chain-rule cancellation of r6_skew_divergence, re-checked
+[PASS] pairing_witnesses  int rho v (u.grad v) = 0 on the m=1 and m=2 witnesses (exact)
+[PASS] decay_fold  the symmetric-part Gronwall: |e^{Lt}v|^2 <= e^{-2 mu t}|v|^2 when Re<Lv,v> <= -mu|v|^2
+[PASS] interval_positive  Re interval [4 c_cc R_7/C_1', Gamma_max/nu]: both ends positive, data-fixed — compact
+[PASS] count_89  original 54 + V002Repairs 16 + R15Closures 19 = 89
+
+6/6 gates PASS, 0 FAIL

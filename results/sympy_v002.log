@@ -1,0 +1,14 @@
+[PASS] l1_subsolution_sign  ξ·Δω = Δ|ω| − |ω||∇ξ|² ≤ 0 at maxima: (−d) + m·g ≥ 0, both terms nonneg
+[PASS] kernel_time_integral  ∫₀¹σ^(−3/4)dσ = 4
+[PASS] rescaled_enstrophy_power  r⁴·r⁻³ = r
+[PASS] m8_threshold_arithmetic  P₁(M₈) = 1/2 (decreasing in M ⇒ ≤ ½ above M₈)
+[PASS] quiet_growth_bound  1/(1−P) ≤ 1+2P ⇔ P(1−2P) ≥ 0, true on [0,½]
+[PASS] ftan_fold  (1+x)^N ≤ e^{Nx} via log(1+x) ≤ x
+[PASS] k4_omega_star_integral  K₄ constant algebra exact
+[PASS] drift_interval_bound  exponent assembly is a ring identity
+[PASS] eps8_squeeze_arithmetic  C'·(ε₈)^{1/4} = c(ν) at the threshold; strict below it by rpow monotonicity
+[PASS] nu32_floor_arithmetic  mass floor = nu**(3/2)*sigma_0**(3/2)/(2*K)
+[PASS] cd_event_integral  per-event integral ≤ Γ/ν uniform in d (δ ≤ max(d,δ))
+[PASS] cd_event_count  episode integrand = 4*Omega*nu/(Gamma**2*L*c*c_1*c_E) (γ cancelled)
+
+12/12 gates PASS, 0 FAIL

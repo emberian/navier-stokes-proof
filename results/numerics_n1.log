@@ -1,0 +1,19 @@
+[PASS] radial_hessian_frobenius  F2^2 = h''^2 + 2(h'/r)^2 exactly
+[PASS] free_hessian_sqrt6  grad^2(1/4pi|z|) Frobenius = sqrt(6)/(4pi r^3) exactly
+[PASS] free_third_3sqrt10  grad^3(1/4pi|z|) Frobenius = 3 sqrt(10)/(4pi r^4) exactly
+[PASS] erf_integral_rep  erf(x)/x = (2/sqrt(pi)) int_0^1 e^{-x^2 s^2} ds
+[PASS] deltaz_tensor_15  |delta-z symmetric tensor|_F^2 = 15|z|^2 exactly
+[PASS] alpha_independence_z0  |diff| = 2.84e-38
+[PASS] alpha_independence_z1  |diff| = 1.34e-38
+  alpha=0.5: erf(0.007483,0.01521,0.009496) lattice(5.07e-5,0.000145,0.000397) recip(0.01508,0.01842,0.02398)
+  alpha=1.0: erf(0.05986,0.1755,0.3808) lattice(7.83e-14,8.43e-13,8.93e-12) recip(0.09016,0.1756,0.4042)
+[PASS] cg_finite_small  the periodic images are weak inside |z| <= 1, as the architecture expects
+[PASS] free_part_dominates  each kernel constant is dominated by its exact free-space part
+
+CERTIFIED UPPER BOUNDS (Frobenius norms; rounded up, 6 significant figures):
+  C_G   <= 0.0226124     (sup_(|z|<=1) |grad R|)
+  C_K   <= 0.10219     (= 1/(4pi) + C_G; free part 1/(4pi) = 0.07957747)
+  C_K'  <= 0.228699     (free part sqrt(6)/(4pi) = 0.1949242)
+  C_K'' <= 0.788814     (free part 3 sqrt(10)/(4pi) = 0.7549382)
+
+9/9 gates PASS, 0 FAIL

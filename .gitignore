@@ -11,8 +11,9 @@ __pycache__/
 *.bak
 
 # --- paper build artifacts and superseded freezes ---
-/paper/v002/
 /paper/superseded/
+/paper/v002/build.log
+/paper/v002/v002-wip.*
 /paper/v001/*.aux
 /paper/v001/*.bbl
 /paper/v001/*.bcf
@@ -68,6 +69,17 @@ __pycache__/
 !/code/sympy_w5.py
 !/code/sympy_w6.py
 !/code/sympy_w89.py
+!/code/sympy_v002.py
+!/code/sympy_p6.py
+!/code/sympy_r15.py
+!/code/numerics_n1_ewald.py
+!/code/numerics_n2_sobolev.py
+!/code/numerics_n3_cf.py
+!/code/numerics_n4_epsreg.py
+!/code/numerics_n5a_dgate.py
+!/code/numerics_n5b_race.py
+!/code/numerics_n6_tail.py
+!/code/sympy_r6.py
 
 # --- results/: the logs of the shipped scripts only ---
 /results/*
@@ -110,6 +122,17 @@ __pycache__/
 !/results/sympy_w5.log
 !/results/sympy_w6.log
 !/results/sympy_w89.log
+!/results/sympy_v002.log
+!/results/sympy_p6.log
+!/results/sympy_r15.log
+!/results/numerics_n1.log
+!/results/numerics_n2.log
+!/results/numerics_n3.log
+!/results/numerics_n4.log
+!/results/numerics_n5a.log
+!/results/numerics_n5b.log
+!/results/numerics_n6.log
+!/results/sympy_r6.log
 
 # --- lake template workflows (contradict the Mathlib pin) ---
 /lean/NSFormal/.github/

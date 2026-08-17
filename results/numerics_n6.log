@@ -1,0 +1,43 @@
+[PASS] cpp_optimization  min_a [4pi C_K a w + 16 sqrt(k3) C_K sqrt(E)/a] = 16 sqrt(pi sqrt(k3)) C_K w^(1/2) E^(1/4)
+[PASS] cpp_second_order  the critical point is the minimum (f'' > 0)
+[PASS] u_far_series  sum 2^-m = 2 exactly
+[PASS] cpp_directed  C'' = 16 sqrt(pi sqrt(k3)) C_K = 4.145963 -> 4.14597 (up)
+[PASS] transport_cancellation  under the lock the w's and nu's cancel EXACTLY: condition = k3^(1/4) <= 49 theta/(4 C_psi C'')
+[PASS] transport_margin  k3^(1/4) = 1.4306 vs 49 theta/(4 C_psi C'') = 184.38: margin 128.9x
+[PASS] entry_sum_two  sum (1-eps_r)^j = 2 at eps_r = 1/2 (event-separated entries)
+[PASS] dq_absorption  X = D1 + c*^2 X + 2C2  =>  D_Q = (D1 + 2C2)/(1 - c*^2) (c* < 1)
+[PASS] gammaE_directed  Gamma_E/nu = sqrt(pi eps*_reg/2) = 0.144158 <= 0.14416
+[PASS] two_gauge_ordering  Gamma_E < Gamma_min iff R7 > 0.03604 C_1'/c_cc: any admissible (large) R7 passes
+
+========================================================================
+THE CERTIFIED-NUMERICS WAVE — ASSEMBLED TABLE (N1-N6)
+========================================================================
+  C_G       <= 0.0226124    [ N1]  torus Green regular part, sup|grad R|
+  C_K       <= 0.102190     [ N1]  = 1/(4pi) + C_G
+  C_K'      <= 0.228699     [ N1]  sup |z|^3 |grad^2 G| (Frobenius)
+  C_K''     <= 0.788814     [ N1]  sup |z|^4 |grad^3 G| (Frobenius)
+  C_S       <= 1.313856     [ N2]  = 1/(2pi) + 2 sqrt(3)/3 (derived, closed form)
+  C_E       =  96.101321    [ N2]  = 96 + 1/pi^2 exactly
+  C_Ee      <= 1878.03      [ N2]  Master Estimate enstrophy constant
+  c_f       >= 0.245420     [ N3]  = (1-e^-4)/4; leakage e^-4 <= 1.84% (w5 slack)
+  mean rate = ln 2          [ N3]  core-mean precession (Frullani, exact)
+  C_R'      <= 5.60919      [ N4]  = 1/2 + (64pi/9) C_K' (1/sqrt2 multiplier exact)
+  C_A       <= 3959.69      [ N4]  = 4 C_R'^4 exactly
+  eps*_reg  >= 0.013230     [ N4]  = sqrt(log2/C_A); <=2 per viscous cylinder
+  C_phi     =  35/8         [N5a]  quartic mollifier, exact
+  C_psi     <= 8.076395     [N5a]  = pi^2/2 + pi, cos^2 window
+  C_h       <= 0.500386     [N5a]  = sqrt(8/7) sqrt(k3) C_K' (closed form)
+  C_low     <= 132.672      [N5b]  strengthened route: K^-2 gain; 315/8 exact
+  C_far     <= 0.83213      [N5b]  = (16/9) sqrt(k3) C_K'
+  C_ann     <= 11.2337      [N5b]  = 24 sqrt(k3) C_K'; mu0 >= 2C_ann/Delta0
+  K         =  4            [N5b]  mollification scale at its floor
+  theta     >= 503.99       [N5b]  rent floor; theta/K^2 >= 31.499
+  eps_r     >= 1/2          [N5b]  race fraction (clamp, 15.7x excess)
+  eta'      >= 1            [N5b]  = -log2(1-eps_r), exact at the clamp
+  C''       <= 4.14597      [ N6]  = 16 sqrt(pi sqrt(k3)) C_K
+  transport 129x margin     [ N6]  k3^(1/4) <= 49 theta/(4 C_psi C''), pure numbers
+  D_Q       assembly        [ N6]  = (D1 + 2C2)/(1 - c*^2), entry sum <= 2
+  Gamma_E   <= 0.14416 nu   [ N6]  two gauges ordered below Gamma_min
+========================================================================
+
+10/10 gates PASS, 0 FAIL

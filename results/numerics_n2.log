@@ -1,0 +1,20 @@
+[PASS] line_bound_discrete  400 random circles, min slack 0.00e+00 >= 0
+[PASS] loomis_whitney_discrete  200 random 3D grids, inequality exact
+[PASS] cauchy_schwarz_grad  int |phi|^3|phi'| <= |phi|_6^3 |phi'|_2 on 25 trials
+[PASS] cauchy_schwarz_L4  int phi^4 <= |phi|_2 |phi|_6^3 on 25 trials
+[PASS] assembly_divide  divide by X^3: X <= a + b
+[PASS] sqrt3_ell1_ell2  (sqrt(3)/6)*4 = 2 sqrt(3)/3
+[PASS] cs_closed_form  C_S = 1/(2pi) + 2 sqrt(3)/3 = 1.3138555
+[PASS] poincare_gap_witness  phi = cos x1: |phi|_2 = |grad phi|_2 exactly (gap = 1 attained)
+[PASS] witness_cos  |cos x1|_6/|grad|_2 = 0.185414 < C_S = 1.31386
+[PASS] witness_bubbles  concentrated bubbles (lam=2,5,10): max ratio 0.35352 < C_S
+[PASS] ce_exact  C_E = 3(32+1/(3pi^2)) = 96 + 1/pi^2 = 96.101321
+[PASS] cee_terms_positive  terms: 20.3609 + 15.347 + 590.3 (shell-sum square dominates)
+
+CERTIFIED RESULTS (rounded up where inexact):
+  C_S   <= 1/(2pi) + 2 sqrt(3)/3 = 1.313855  -> quote 1.313856
+  C_E    = 96 + 1/pi^2 = 96.101321  (exact closed form)
+  c_g    = 2.428489   c_m = 1.016887   c_p = 40.13509   (pinned pure numbers)
+  C_Ee  <= 1878.023   (= 3[2 C_S^2 c_g^2 + 144 pi^2 C_K^2 c_m^2 + 2 k3^2 c_p^2 C_K^2])
+
+12/12 gates PASS, 0 FAIL

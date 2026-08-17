@@ -1,0 +1,29 @@
+[PASS] phi_sup_exact  C_phi0 = |phi|_inf = 105/(32 pi) (attained at 0; (1-r^2)^2 decreasing)
+[PASS] kernel_integral_4pi  int_{|z|>=r0} |z|^-4 dz = 4 pi/r0 exactly (scaled to r0 = 1)
+[PASS] pi_cancellation  12 pi C_phi0 = 315/8 exactly — the pi's cancel
+[PASS] series_8_7  sum 8^-m = 8/7
+[PASS] series_4_3  sum 4^-m = 4/3
+[PASS] outer_bracket_at_K4  315/8 + 48/28 = 2301/56 exactly (K = 4)
+[PASS] clow_directed  C_low = 2 sqrt(k3) C_K'' (2301/56) = 132.6715 -> 132.672 (up)
+[PASS] cfar_directed  C_far = (16/9) sqrt(k3) C_K' = 0.83212 -> 0.83213 (up)
+[PASS] cann_directed  C_ann = 24 sqrt(k3) C_K' = 11.23362 -> 11.2337 (up)
+[PASS] k_requirement  burning clause: K >= sqrt(2(C_low + 2C_far)/(D0 mu0)) = 3.4581 < 4
+[PASS] k_leakage_negligible  K >= C_psi/(343 theta) = 4.67e-5: negligible
+[PASS] k_at_floor  K = max(4, ceil(3.46)) = 4 — the mollification scale is four core radii
+[PASS] theta_value  theta = [D0 mu0/(2C_h)]^2 >= 503.99 (mu0 at its floor)
+[PASS] rent_floor_strong  rent-floor coefficient theta/K^2 >= 31.499
+[PASS] clamp_binds  burn formula c_q theta/K^2 = 7.8748 >= 1/2: the content clamp binds
+[PASS] clamp_margin  excess 15.75x: >93% of the mechanism could fail and eps_r >= 1/2 survives
+[PASS] eta_prime_one  eta' = -log2(1 - 1/2) = 1 exactly
+[PASS] q2_fold_clause  4(1 - eps_r) = 2 > 1: the (q2) affine fold direction holds
+[PASS] race_ratio_algebra  [4(1-eps)]^W / (2^W)^2 = (1-eps)^W (rd_race_ratio's algebra, spot W = 7)
+
+CERTIFIED RESULTS (stage N5, slice b):
+  C_low <= 132.672     (= 2 sqrt(k3) C_K''(315/8 + 48/(7K)); K^-2 gain — strengthened)
+  C_far <= 0.83213     (= (16/9) sqrt(k3) C_K', closed form)
+  C_ann <= 11.2337     (= 24 sqrt(k3) C_K'; mu0 floor = 2 C_ann/Delta0)
+  K      = 4            (the mollification scale lands at its floor)
+  theta >= 503.99      (rent floor theta/K^2 >= 31.499)
+  eps_r >= 1/2   eta' >= 1   eta >= 1/2   (clamped; formula excess ~15.7x)
+
+19/19 gates PASS, 0 FAIL
