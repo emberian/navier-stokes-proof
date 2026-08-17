@@ -55,13 +55,24 @@ strengthen it and do not substitute for any part of it.
 
 **The community formalization layer.** Beginning with PR #1 (ember arlynx), the
 repository also hosts an in-progress formalization of the PDE-level argument itself:
-**160 additional kernel-checked theorems** — a concrete period-2π torus, classical
-Navier–Stokes and vorticity-equation predicates with nonvacuous witnesses, the
-derived vector-vorticity equation, measure-theoretic strain-budget estimates, and
-the maximum-envelope machinery (attained maxima, a compact-domain Danskin/Dini
-theorem, corrected parabolic closures). This layer is distinct from the paper's 89
-certificates: it does **not** yet prove global regularity, and its status and
-dependency roadmap are tracked in `FORMALIZATION.md`.
+**905 additional kernel-checked theorems**, for **994 theorems total**. This layer is
+distinct from the paper's 89 certificates and does **not** prove global regularity.
+
+The development now derives the vector-vorticity equation, periodic integration
+identities, kinetic-energy and enstrophy balances, periodic Sobolev estimates, and
+conditional continuation bounds directly from concrete classical Navier–Stokes
+predicates. It reduces the remaining nonstandard input to a scale-critical dynamic
+depletion estimate for a concrete self-transport quotient or its signed production
+correlation.
+
+The newest modules test that reduction rather than assuming it away. They prove a
+localized-helicity obstruction to saturation, exhibit an explicit smooth periodic
+curl field where global helicity cancels but localized helicity detects a strict gap,
+and formalize finite vorticity-line averaging and its mean-ergodic limitation. The
+resulting retained-amplitude continuation criterion is kernel-checked, but the
+Navier–Stokes-specific estimate that would make it unconditional remains open. See
+`FORMALIZATION.md`, `RESEARCH.md`, and `DYNAMICS.md` for the dependency map, audit,
+and active research targets.
 
 ## Contents
 
@@ -71,9 +82,11 @@ dependency roadmap are tracked in `FORMALIZATION.md`.
 | `paper/v001/zenodo-v001-r4/` | v001's frozen artifacts as published on Zenodo, with SHA-256 manifests and OpenTimestamps `.ots` receipts (paper files carry the `-v001` suffix locally; the Zenodo v1 record predates the naming convention) |
 | `paper/v002/` | **the current paper v002**: source (`main.tex`, `refs.bib`) |
 | `paper/v002/zenodo-v002-r1/` | v002's frozen artifacts as published on Zenodo (2026-08-17): `global-regularity-navier-stokes-torus-v002.pdf`, the Lean formalization zip, frozen source copies, SHA-256 manifests, and completed Bitcoin-attested `.ots` receipts |
-| `lean/NSFormal/` | the Lean 4 + Mathlib development: the paper's 89 certificates and the community formalization layer — `lake build` re-verifies all of it |
-| `FORMALIZATION.md` | the full-formalization roadmap and current proof obligations |
-| `code/` | the symbolic-adjudication scripts (`sympy_*.py`) and the calibrated numerical instruments cited by the paper (see `code/README.md`) |
+| `lean/NSFormal/` | the Lean 4 + Mathlib development — `lake build` re-verifies all 994 current theorems |
+| `FORMALIZATION.md` | the full-formalization dependency map and current PDE-level proof obligations |
+| `RESEARCH.md` | the independent analytic audit, rigorous replacement reduction, and active research program |
+| `DYNAMICS.md` | the energy-paid filtered near/far theorem, cubic heat-flux reduction, and dynamic scale-variation target |
+| `code/` | the symbolic-adjudication scripts (`sympy_*.py`) and calibrated numerical instruments cited by the paper (see `code/README.md`) |
 | `results/` | the archived output log of every script in `code/` |
 
 ## Verify the Lean development yourself
@@ -92,8 +105,10 @@ lake exe cache get   # one-time: downloads the pinned Mathlib's prebuilt cache
 lake build           # kernel-verifies every theorem
 ```
 
-A successful build with no `sorry` warnings is the verification. The same build runs
-in CI on every commit (`.github/workflows/lean.yml`).
+A successful build with no `sorry` warnings is the verification. Appendix C of the
+paper maps the 89 paper certificates display-by-display; the community files are
+inventoried in `lean/NSFormal/README.md`. The same build runs in CI on every commit
+(`.github/workflows/lean.yml`).
 
 ## Reproduce the instruments
 
