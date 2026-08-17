@@ -798,18 +798,31 @@ For its contraction operator `A_L` and a helicity seed `h`, take the adjoint-ave
  \qquad \|\phi_L\|_2\le r_L.
 \]
 After a leakage payment `delta_L`, the defect gap therefore bounds the dangerous correlation by
-`1-(r_L-delta_L)^2/V`.  `DynamicCriterion.lean` now proves the corresponding complete
+`1-(r_L-delta_L)^2/V`.  `DynamicCriterion.lean` proves the corresponding complete
 continuation theorem under
 \[
  \left(\left(1-\frac{(r_L-\delta_L)^2}{V}\right)\Theta\right)^2E\le M.
 \]
-This is the current exact research interface.  The operator layer is now concrete as well:
-`FlowAveraging.lean` defines normalized Bochner averages of strongly continuous contraction
-operators, proves that the average is a contraction, and constructs the isometric Koopman
-operator on scalar `L²` induced by any measure-preserving map.  What remains on this bridge is
-to construct the global smooth vorticity flow on the measured torus at each physical time,
-prove its Haar-measure preservation and strong `L²` continuity, and then prove a
-solution-uniform lower bound on `r_L-delta_L` strong enough for the scale-critical product.
+The operator layer has now been repaired and made genuinely strong-continuity based.
+`FlowKoopman.lean` does not integrate the Koopman family in operator norm (translation groups
+need not be norm-continuous).  Instead it integrates every `L²` orbit, proves that the result is
+a bounded linear contraction, derives strong continuity from a continuous measure-preserving
+flow, and proves
+\[
+ \|U_\tau A_Lh-A_Lh\|_2\le \frac{2|\tau|}{L}\|h\|_2.
+\]
+It also proves `U_tau* = U_{-tau}`, commutation with `A_L` and `A_L*`, and that the positive
+Fejér weight `phi_L=A_L* A_Lh` belongs to the transport-generator domain with generator norm at
+most `2||h||_2/L`.  Thus `delta_L` is no longer a free Hilbert-space leakage hypothesis.
+
+Two bridges remain, of very different character.  The formalization bridge is to construct the
+global smooth flow of each smooth divergence-free vorticity time slice on Haar `T³`, identify
+its Koopman generator with the concrete descended operator `torusScalarTransport`, and convert
+the checked `L²` generator bound into the centered-logarithmic `L¹` leakage used by the defect
+identity.  The mathematical research obstruction is then a solution-uniform lower bound on the
+retained helicity amplitude `r_L`, strong enough that the resulting scale-critical product is
+bounded throughout every candidate concentration episode.  Generic averaging cannot supply
+that bound, as the checked mean-ergodic and annihilation examples already show.
 
 ## Blocking proof obligations found in the paper
 

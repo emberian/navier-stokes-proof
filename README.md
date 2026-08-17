@@ -55,8 +55,13 @@ strengthen it and do not substitute for any part of it.
 
 **The community formalization layer.** Beginning with PR #1 (ember arlynx), the
 repository also hosts an in-progress formalization of the PDE-level argument itself:
-**905 additional kernel-checked theorems**, for **994 theorems total**. This layer is
+**935 additional kernel-checked theorems**, for **1024 theorems total**. This layer is
 distinct from the paper's 89 certificates and does **not** prove global regularity.
+
+“Custom formalization” here means new definitions and proofs written in ordinary
+Lean. It does not mean a custom verifier: every declaration is checked by the stock
+pinned Lean kernel over an unmodified Mathlib, with no project axioms or proof
+placeholders.
 
 The development now derives the vector-vorticity equation, periodic integration
 identities, kinetic-energy and enstrophy balances, periodic Sobolev estimates, and
@@ -68,8 +73,11 @@ correlation.
 The newest modules test that reduction rather than assuming it away. They prove a
 localized-helicity obstruction to saturation, exhibit an explicit smooth periodic
 curl field where global helicity cancels but localized helicity detects a strict gap,
-and formalize finite vorticity-line averaging and its mean-ergodic limitation. The
-resulting retained-amplitude continuation criterion is kernel-checked, but the
+and formalize finite vorticity-line averaging and its mean-ergodic limitation. A
+strongly continuous Koopman layer now constructs the actual `L²` average without
+assuming operator-norm continuity and proves an explicit `2‖h‖₂/L` generator-leakage
+bound for the positive Fejér weight. The resulting retained-amplitude continuation
+criterion is kernel-checked, but the
 Navier–Stokes-specific estimate that would make it unconditional remains open. See
 `FORMALIZATION.md`, `RESEARCH.md`, and `DYNAMICS.md` for the dependency map, audit,
 and active research targets.
@@ -82,7 +90,7 @@ and active research targets.
 | `paper/v001/zenodo-v001-r4/` | v001's frozen artifacts as published on Zenodo, with SHA-256 manifests and OpenTimestamps `.ots` receipts (paper files carry the `-v001` suffix locally; the Zenodo v1 record predates the naming convention) |
 | `paper/v002/` | **the current paper v002**: source (`main.tex`, `refs.bib`) |
 | `paper/v002/zenodo-v002-r1/` | v002's frozen artifacts as published on Zenodo (2026-08-17): `global-regularity-navier-stokes-torus-v002.pdf`, the Lean formalization zip, frozen source copies, SHA-256 manifests, and completed Bitcoin-attested `.ots` receipts |
-| `lean/NSFormal/` | the Lean 4 + Mathlib development — `lake build` re-verifies all 994 current theorems |
+| `lean/NSFormal/` | the Lean 4 + Mathlib development — `lake build` re-verifies all 1024 current theorems |
 | `FORMALIZATION.md` | the full-formalization dependency map and current PDE-level proof obligations |
 | `RESEARCH.md` | the independent analytic audit, rigorous replacement reduction, and active research program |
 | `DYNAMICS.md` | the energy-paid filtered near/far theorem, cubic heat-flux reduction, and dynamic scale-variation target |

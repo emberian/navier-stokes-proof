@@ -1047,7 +1047,7 @@ calculation gives
  \qquad \|\phi_L\|_2\le r_L.
 \]
 Thus, after paying an effective leakage `delta_L`, the normalized correlation allowance is at
-most `1-(r_L-delta_L)^2/V`.  The new theorem
+most `1-(r_L-delta_L)^2/V`.  The theorem
 `retainedAverage_refined_cubic_rate_bounded_of_energy_budget` closes the full dynamic argument
 from a uniform bound on
 \[
@@ -1057,13 +1057,25 @@ This is stronger than merely asking `r_L>C_log/L`: beating leakage makes the gap
 critical closure requires the displayed remaining allowance, together with `Theta`, to decay at
 the enstrophy scale.  Any successful continuation proof must quantify both effects.
 
-The functional-analytic realization is partly discharged.  A measure-preserving map now induces
-a checked isometric Koopman operator on scalar `L²`, and a normalized Bochner average of any
-strongly continuous contraction family is again a contraction.  The outstanding infrastructure
-is specifically the global vorticity-flow theorem on the measured torus—existence, smooth
-dependence, Haar-volume preservation, and strong continuity—not an assumed abstract averaging
-operator.  Once that is built, the remaining obstacle is the lower bound on retained helicity
-amplitude, not boundedness of the averaging map.
+The functional-analytic realization is now sharper than that preliminary formulation.
+`FlowKoopman.lean` identifies an important pitfall: an operator-valued Bochner integral would
+require operator-norm continuity, which Koopman translation groups generally do not have.  It
+instead constructs `A_L` by integrating each strongly continuous `L²` orbit and proves that this
+pointwise integral is a bounded linear contraction.  For a continuous measure-preserving flow it
+then proves the group and adjoint laws, the exact endpoint generator of `A_L`, and
+\[
+ \|U_\tau A_Lh-A_Lh\|_2\le 2|\tau|\|h\|_2/L.
+\]
+The same bound is propagated through the adjoint sign repair: `phi_L=A_L^*A_Lh` is in the
+transport-generator domain and its generator has norm at most `2||h||_2/L`.  Hence the abstract
+leakage debit is derived rather than postulated at the Hilbert-space level.
+
+The outstanding infrastructure is now narrower: construct the global smooth Haar-preserving
+flow of the concrete smooth divergence-free torus vorticity, identify the Koopman generator with
+`torusScalarTransport`, and transfer its `L²` bound to the centered-log `L¹` pairing.  Once this
+is built, the genuinely Navier--Stokes-specific obstacle remains the lower bound on retained
+helicity amplitude at the dynamically relevant averaging length—not boundedness of the average
+and not generic flow-box existence.
 
 ### WP5. Do not return to the funnel prematurely
 

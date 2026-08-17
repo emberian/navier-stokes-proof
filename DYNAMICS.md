@@ -1946,11 +1946,21 @@ This separates the remaining analysis into two quantitative questions: how much 
 frequency helicity survives in `r_L`, and how small the centered-log endpoint error can be made
 at the same averaging length.
 
-At the operator level, the construction is no longer hypothetical: a measure-preserving map
-produces an isometric Koopman operator on scalar `L²`, and normalized Bochner averages of a
-strongly continuous contraction family remain contractions.  The unformalized bridge is the
-global smooth, Haar-preserving vorticity flow itself and its strong `L²` continuity at each
-physical time.
+At the operator level, the construction is no longer hypothetical and no longer assumes
+operator-norm continuity.  `FlowKoopman.lean` constructs the normalized average by integrating
+each strongly continuous `L²` orbit, proves it is a bounded linear contraction, and derives
+strong continuity of Koopman transport from a continuous measure-preserving flow.  The group
+law gives the exact endpoint formula
+\[
+ \|U_\tau A_Lh-A_Lh\|_2\le 2|\tau|\|h\|_2/L.
+\]
+Backward transport is the Hilbert adjoint, so the positive Fejér weight
+`phi_L=A_L^*A_Lh` inherits the same finite transport defect and belongs to the generator domain
+with generator norm at most `2||h||_2/L`.  Thus the Hilbert-space portion of `delta_L` is now an
+output.  The unformalized bridge is to construct the global smooth Haar-preserving flow of the
+actual torus vorticity, identify this generator with `w·nabla`, and pass from the checked `L²`
+bound to the centered-logarithmic spatial leakage.  The non-generic obstruction after that is a
+Navier--Stokes lower bound on retained low-transport-frequency helicity.
 
 The two scalar fourth-power steps in (9.36) are kernel-checked as
 `variable_direction_strain_fourth_split` and `variable_direction_strain_fourth_paid` in
