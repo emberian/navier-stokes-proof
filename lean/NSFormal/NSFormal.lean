@@ -26,6 +26,7 @@ import NSFormal.ConcreteDynamicCriterion
 import NSFormal.LocalizedHelicity
 import NSFormal.FlowAveraging
 import NSFormal.FlowKoopman
+import NSFormal.ForTauCeti.FlatVectorField
 import NSFormal.TorusFlow
 import NSFormal.Domain
 import NSFormal.MaxEnvelope
