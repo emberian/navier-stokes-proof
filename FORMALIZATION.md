@@ -815,11 +815,20 @@ It also proves `U_tau* = U_{-tau}`, commutation with `A_L` and `A_L*`, and that 
 Fejér weight `phi_L=A_L* A_Lh` belongs to the transport-generator domain with generator norm at
 most `2||h||_2/L`.  Thus `delta_L` is no longer a free Hilbert-space leakage hypothesis.
 
-Two bridges remain, of very different character.  The formalization bridge is to construct the
-global smooth flow of each smooth divergence-free vorticity time slice on Haar `T³`, identify
-its Koopman generator with the concrete descended operator `torusScalarTransport`, and convert
-the checked `L²` generator bound into the centered-logarithmic `L¹` leakage used by the defect
-identity.  The mathematical research obstruction is then a solution-uniform lower bound on the
+`TorusFlow.lean` now checks this bridge on a genuinely moving model rather than only on the
+identity flow.  It constructs the Haar-preserving shear
+`(x,y,z) ↦ (x+s cos y,y,z)`, proves that its nonzero generator `(cos y,0,0)` is the periodic
+curl of `(0,0,sin y)`, and identifies the pointwise flow derivative with
+`torusScalarTransport` for every scalar field differentiable along the transported coordinate.
+It then instantiates the strong Koopman/Fejér construction and exhibits an explicit nonzero
+retained seed with positive signal.
+
+Two bridges remain, of very different character.  The remaining formalization bridge is to
+construct this flow and generator identification uniformly for each arbitrary smooth
+divergence-free vorticity time slice on Haar `T³`, upgrade the pointwise identity to an `L²`
+generator theorem on the required smooth domain, and convert the checked `L²` bound into the
+centered-logarithmic `L¹` leakage used by the defect identity.  The mathematical research
+obstruction is then a solution-uniform lower bound on the
 retained helicity amplitude `r_L`, strong enough that the resulting scale-critical product is
 bounded throughout every candidate concentration episode.  Generic averaging cannot supply
 that bound, as the checked mean-ergodic and annihilation examples already show.

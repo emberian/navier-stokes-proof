@@ -1070,10 +1070,18 @@ The same bound is propagated through the adjoint sign repair: `phi_L=A_L^*A_Lh` 
 transport-generator domain and its generator has norm at most `2||h||_2/L`.  Hence the abstract
 leakage debit is derived rather than postulated at the Hilbert-space level.
 
-The outstanding infrastructure is now narrower: construct the global smooth Haar-preserving
-flow of the concrete smooth divergence-free torus vorticity, identify the Koopman generator with
-`torusScalarTransport`, and transfer its `L²` bound to the centered-log `L¹` pairing.  Once this
-is built, the genuinely Navier--Stokes-specific obstacle remains the lower bound on retained
+The concrete prototype is now checked as well.  `TorusFlow.lean` constructs the nontrivial
+Haar-preserving shear `(x,y,z) ↦ (x+s cos y,y,z)`, proves that its nonzero generator
+`(cos y,0,0)` is a genuine periodic curl, and identifies its pointwise generator with
+`torusScalarTransport` on every scalar field differentiable along the transported coordinate.
+The full strongly continuous Koopman and positive Fejér layers specialize to this moving flow,
+including an explicit nonzero retained seed with positive signal.
+
+The outstanding infrastructure is consequently narrower and better tested: construct the
+global smooth Haar-preserving flow of an arbitrary concrete smooth divergence-free torus
+vorticity, prove the generator identity in `L²` on the required smooth domain, and transfer its
+bound to the centered-log `L¹` pairing.  Once this is built, the genuinely
+Navier--Stokes-specific obstacle remains the lower bound on retained
 helicity amplitude at the dynamically relevant averaging length—not boundedness of the average
 and not generic flow-box existence.
 

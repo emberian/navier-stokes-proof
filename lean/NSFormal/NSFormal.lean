@@ -26,6 +26,7 @@ import NSFormal.ConcreteDynamicCriterion
 import NSFormal.LocalizedHelicity
 import NSFormal.FlowAveraging
 import NSFormal.FlowKoopman
+import NSFormal.TorusFlow
 import NSFormal.Domain
 import NSFormal.MaxEnvelope
 import NSFormal.PeriodicCalculus
