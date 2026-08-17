@@ -1075,7 +1075,8 @@ Haar-preserving shear `(x,y,z) ↦ (x+s cos y,y,z)`, proves that its nonzero gen
 `(cos y,0,0)` is a genuine periodic curl, and identifies its pointwise generator with
 `torusScalarTransport` on every scalar field differentiable along the transported coordinate.
 The full strongly continuous Koopman and positive Fejér layers specialize to this moving flow,
-including an explicit nonzero retained seed with positive signal.
+including the nonconstant exact first integral `cos y` as an explicit nonzero retained `L²`
+seed with positive signal.
 
 The outstanding infrastructure is consequently narrower and better tested: construct the
 global smooth Haar-preserving flow of an arbitrary concrete smooth divergence-free torus

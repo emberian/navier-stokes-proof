@@ -1960,8 +1960,8 @@ with generator norm at most `2||h||_2/L`.  Thus the Hilbert-space portion of `de
 output.  `TorusFlow.lean` tests the geometric bridge on the nontrivial Haar-preserving shear
 `(x,y,z) ↦ (x+s cos y,y,z)`: its nonzero generator is proved to be a genuine periodic curl,
 its pointwise action is identified with `w·nabla`, and its strong Koopman/Fejér average has an
-explicit nonzero retained seed and positive signal.  The remaining formal bridge is to carry
-that construction out for arbitrary smooth torus vorticity, prove the generator identity in
+explicit nonzero nonconstant retained first integral and positive signal.  The remaining formal
+bridge is to carry that construction out for arbitrary smooth torus vorticity, prove the generator identity in
 `L²`, and pass from the checked `L²` bound to the centered-logarithmic spatial leakage.  The
 non-generic obstruction after that is a Navier--Stokes lower bound on retained
 low-transport-frequency helicity.

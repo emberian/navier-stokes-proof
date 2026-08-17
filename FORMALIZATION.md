@@ -821,7 +821,7 @@ identity flow.  It constructs the Haar-preserving shear
 curl of `(0,0,sin y)`, and identifies the pointwise flow derivative with
 `torusScalarTransport` for every scalar field differentiable along the transported coordinate.
 It then instantiates the strong Koopman/Fejér construction and exhibits an explicit nonzero
-retained seed with positive signal.
+nonconstant retained first integral with positive signal.
 
 Two bridges remain, of very different character.  The remaining formalization bridge is to
 construct this flow and generator identification uniformly for each arbitrary smooth

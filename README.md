@@ -55,7 +55,7 @@ strengthen it and do not substitute for any part of it.
 
 **The community formalization layer.** Beginning with PR #1 (ember arlynx), the
 repository also hosts an in-progress formalization of the PDE-level argument itself:
-**959 additional kernel-checked theorems**, for **1048 theorems total**. This layer is
+**963 additional kernel-checked theorems**, for **1052 theorems total**. This layer is
 distinct from the paper's 89 certificates and does **not** prove global regularity.
 
 “Custom formalization” here means new definitions and proofs written in ordinary
@@ -92,7 +92,7 @@ and active research targets.
 | `paper/v001/zenodo-v001-r4/` | v001's frozen artifacts as published on Zenodo, with SHA-256 manifests and OpenTimestamps `.ots` receipts (paper files carry the `-v001` suffix locally; the Zenodo v1 record predates the naming convention) |
 | `paper/v002/` | **the current paper v002**: source (`main.tex`, `refs.bib`) |
 | `paper/v002/zenodo-v002-r1/` | v002's frozen artifacts as published on Zenodo (2026-08-17): `global-regularity-navier-stokes-torus-v002.pdf`, the Lean formalization zip, frozen source copies, SHA-256 manifests, and completed Bitcoin-attested `.ots` receipts |
-| `lean/NSFormal/` | the Lean 4 + Mathlib development — `lake build` re-verifies all 1048 current theorems |
+| `lean/NSFormal/` | the Lean 4 + Mathlib development — `lake build` re-verifies all 1052 current theorems |
 | `FORMALIZATION.md` | the full-formalization dependency map and current PDE-level proof obligations |
 | `RESEARCH.md` | the independent analytic audit, rigorous replacement reduction, and active research program |
 | `DYNAMICS.md` | the energy-paid filtered near/far theorem, cubic heat-flux reduction, and dynamic scale-variation target |

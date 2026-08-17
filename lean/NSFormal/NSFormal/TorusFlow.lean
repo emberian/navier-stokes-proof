@@ -440,3 +440,65 @@ theorem torus3CosShearFejerWeight_constantOne_signal_pos
   rw [← torus3CosShearKoopmanAverage]
   rw [torus3CosShearKoopmanAverage_constantOne L hL]
   exact torus3ConstantOneL2_ne_zero
+
+/-! ### A nonconstant retained first integral -/
+
+/-- The nonconstant exact first integral `cos y`, promoted to the actual
+scalar `L²` space. -/
+def torus3CosineFirstIntegralL2 : TorusScalarL2 :=
+  ((torusCosCoordinate 1).memLp_torus_volume 2).toLp (torusCosCoordinate 1)
+
+theorem torus3CosineFirstIntegralL2_ne_zero :
+    torus3CosineFirstIntegralL2 ≠ 0 := by
+  let hmem := (torusCosCoordinate 1).memLp_torus_volume 2
+  intro hzero
+  have hcoe := hmem.coeFn_toLp
+  have hzero' : hmem.toLp (torusCosCoordinate 1) = 0 := by
+    simpa only [torus3CosineFirstIntegralL2] using hzero
+  rw [hzero'] at hcoe
+  have hae : (fun x : Torus3 => torusCosCoordinate 1 x) =ᵐ[
+      (volume : Measure Torus3)] 0 := by
+    filter_upwards [hcoe.symm] with x hx
+    simpa using hx
+  have hintegralZero :
+      (∫ x : Torus3, torusCosCoordinate 1 x ^ 2) = 0 := by
+    apply integral_eq_zero_of_ae
+    filter_upwards [hae] with x hx
+    simp [hx]
+  exact (ne_of_gt localizedHelicity_cosSq_integral_pos) hintegralZero
+
+theorem torus3CosShearKoopman_cosineFirstIntegral (s : ℝ) :
+    measurePreservingFlowKoopman (volume : Measure Torus3)
+      torus3CosShearFlow torus3CosShearFlow_measurePreserving s
+        torus3CosineFirstIntegralL2 = torus3CosineFirstIntegralL2 := by
+  let hmem := (torusCosCoordinate 1).memLp_torus_volume 2
+  change Lp.compMeasurePreserving (torus3CosShearFlow s)
+      (torus3CosShearFlow_measurePreserving s)
+        (hmem.toLp (torusCosCoordinate 1)) =
+    hmem.toLp (torusCosCoordinate 1)
+  rw [Lp.toLp_compMeasurePreserving]
+  apply MemLp.toLp_congr
+  exact Filter.Eventually.of_forall fun x =>
+    torusCosCoordinate_one_torus3CosShearMap s x
+
+theorem torus3CosShearKoopmanAverage_cosineFirstIntegral
+    (L : ℝ) (hL : 0 < L) :
+    torus3CosShearKoopmanAverage L hL torus3CosineFirstIntegralL2 =
+      torus3CosineFirstIntegralL2 := by
+  rw [torus3CosShearKoopmanAverage,
+    measurePreservingFlowKoopmanAverage_apply]
+  simp_rw [torus3CosShearKoopman_cosineFirstIntegral]
+  rw [intervalIntegral.integral_const]
+  simp [hL.ne']
+
+/-- The positive Fejér construction retains a strictly positive signal from a
+concrete nonconstant first integral of the nonidentity flow. -/
+theorem torus3CosShearFejerWeight_cosineFirstIntegral_signal_pos
+    (L : ℝ) (hL : 0 < L) :
+    0 < inner ℝ
+      (torus3CosShearFejerWeight L hL torus3CosineFirstIntegralL2)
+      torus3CosineFirstIntegralL2 := by
+  apply measurePreservingFlowFejerWeight_inner_seed_pos
+  rw [← torus3CosShearKoopmanAverage]
+  rw [torus3CosShearKoopmanAverage_cosineFirstIntegral L hL]
+  exact torus3CosineFirstIntegralL2_ne_zero
